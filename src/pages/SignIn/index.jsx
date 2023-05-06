@@ -1,13 +1,17 @@
 import { Input } from "../../components/Input";
 import { Logo } from "../../components/Logo";
 import { Container, Form, ButtoSigIn, ButtoTextSigIn } from "./styles";
-import { FiMail } from "react-icons/fi"
+import { FiLock, FiMail } from "react-icons/fi"
 
 export function SignIn() {
   return (
     <Container>
+      <Logo />
+
       <Form>
-        <Logo />
+        <h3>
+          Fazer login
+        </h3>
 
         <div className="email">
           <label className="labels" htmlFor="email">
@@ -27,7 +31,7 @@ export function SignIn() {
           <Input
             placeholder="Email: exemplo@exemplo.com.br"
             type="password"
-            icon={FiMail}
+            icon={FiLock}
           />
         </div>
 

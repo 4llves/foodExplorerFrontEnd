@@ -6,23 +6,39 @@ import { ButtonText } from "../../components/ButtonText"
 export const Container = styled.div`
   height: 100%;
   display: flex;
+  align-items: center;  
+  flex-direction: column;
+  justify-content: center;
 
-  align-items: stretch;
+  margin: 15.6rem auto;
+
+  ${media.small`
+  `};
+  ${media.medium`
+  `};
+  ${media.large`
+    margin: 9rem auto;
+
+    flex-direction: row;
+    gap: 16rem;
+  `};
+  ${media.exlarge`
+    gap: 30.6rem;
+  `};
 `
 export const Form = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column;  
+  
 
   h3 {
     display: none;
-  }
-
-  margin: 15.6rem auto;
+  }  
 
   .name {    
-    margin-top: 7.3rem;    
+    margin-top: 7.3rem;
   } 
   
   .password, .email {
@@ -33,29 +49,37 @@ export const Form = styled.form`
     display: flex;
     margin-bottom: .8rem;
     font-size: 1.6rem;
-  }
+  } 
 
-  ${media.small && media.medium`
-    font-size: 1.4rem;
-  `};  
-  ${media.large && media.exlarge`
+
+  ${media.small`
+  `};
+  ${media.medium`
+  `};
+  ${media.large`
     background: ${({ theme }) => theme.COLORS.DARK['700']};
     padding: 6.4rem;
     
-    width: 47.6rem;
-    margin-top: 9rem;
+    width: 47.6rem;    
 
     h3 {
       display: flex;
+      font-size: 3.2rem;
+      font-family: ${({ theme }) => theme.FONTS.POPPINS};
+      font-weight: 500;
     }
 
-  `};  
+    border-radius: 1.6rem;
+
+  `};
+  ${media.exlarge`
+  `}; 
 `
 
 export const ButtoSigIn = styled(Button)`
-  margin-top: 3.2rem;  
+  margin-top: 3.2rem;
 `
 
 export const ButtoTextSigIn = styled(ButtonText)`
-  margin-top: 3.2rem;  
+  margin-top: 3.2rem;
 `
