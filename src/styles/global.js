@@ -19,8 +19,8 @@ export default createGlobalStyle`
   }
 
   body, input, button, textarea {
-    font-family: ${({ theme }) => theme.FONTS.ROBOTO};
-    font-size: 1.6rem;
+    font-family: ${({ theme }) => theme.FONTS.TITLE};
+    /* font-size: 1.6rem; */
     outline: none;
   }
 

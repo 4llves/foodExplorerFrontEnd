@@ -3,7 +3,7 @@ import media from "../../styles/media";
 
 export const Container = styled.button`   
   color: ${({ theme }) => theme.COLORS.LIGHT['100']};
-  font-family: ${({ theme }) => theme.FONTS.POPPINS};
+  font-family: ${({ theme }) => theme.FONTS.TEXT};
   background: none;
 
   

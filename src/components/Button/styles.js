@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Container = styled.button` 
   background-color: ${({ theme }) => theme.COLORS.TOMATO['100']};
   color: ${({ theme }) => theme.COLORS.LIGHT['100']};
-  font-family: ${({ theme }) => theme.FONTS.POPPINS};
+  font-family: ${({ theme }) => theme.FONTS.TEXT};
  
   display: flex;
   flex-direction: row;

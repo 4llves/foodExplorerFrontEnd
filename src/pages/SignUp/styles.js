@@ -65,7 +65,7 @@ export const Form = styled.form`
     h3 {
       display: flex;
       font-size: 3.2rem;
-      font-family: ${({ theme }) => theme.FONTS.POPPINS};
+      font-family: ${({ theme }) => theme.FONTS.TEXT};
       font-weight: 500;
     }
 

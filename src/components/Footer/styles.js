@@ -3,9 +3,6 @@ import media from "../../styles/media"
 
 export const Container = styled.footer`
   /* grid-area: header; */
-  bottom: 0;
-  position: fixed;
-
   width: 100%;
   padding: 2.9rem 2.8rem;
 
@@ -33,7 +30,7 @@ export const Container = styled.footer`
   }
 
   span {
-    font-size: 1.2rem;    
+    font-size: 1.2rem;
   }
 
   ${media.small`
