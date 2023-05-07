@@ -22,7 +22,7 @@ export const Container = styled.button`
 
 
   > svg {
-    gap: .8rem;
+    gap: .8rem;    
   }
 
   ${media.small && media.medium`

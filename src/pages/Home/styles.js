@@ -8,25 +8,25 @@ export const Container = styled.div`
   display: flex;
   flex: 1;
   align-items: center;  
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
 
-  .card {
+  .head {
     display: flex;    
 
     background: ${({ theme }) => theme.COLORS.GRADIENT['200']};
     color: ${({ theme }) => theme.COLORS.LIGHT['300']};
-    width: 37.6rem;
-    height: 12rem;
+    width: 80vw;
+    height: 29vh;
     
-    margin: 4.4rem 1.6rem 6.2rem 3.6rem;
-    /* padding: 3.6rem .8rem 2.2rem 15.3rem; */
+    /* margin: 4.4rem 1.6rem 6.2rem 3.6rem;     */
+    margin: 4.4rem auto;
 
     img {
       display: block;
       position: relative;
 
-      width: 19.1rem;
+      width: 19.1rem;      
       height: 14.9rem;
 
       opacity: 0.8;
@@ -54,17 +54,50 @@ export const Container = styled.div`
         font-size: 1.1rem;
         line-height: 140%;        
       }
-    }
-    
+    }    
+  }
+
+  .cards {    
+    width: 100vw;
+    display: flex;
+
+    overflow-x: scroll;    
   }
 
   ${media.small`
   `};
-  ${media.medium`
+  ${media.medium`   
+
+    .head {      
+      height: 35vh;
+
+      img {
+        width: 22.6rem;
+        height: 17.5rem;
+      }
+    }
   `};
-  ${media.large`    
+  ${media.large`
+    .head {      
+      height: 24rem;
+
+      img {
+        width: 31.1rem;
+        height: 26.9rem;
+      }
+    }
   `};
-  ${media.exlarge`    
+  ${media.exlarge`
+    .head {
+      
+      img {
+        width: 63.2rem;
+        height: 40.6rem;
+
+        top: -138px;
+        
+      }
+    }
   `};
 `
 

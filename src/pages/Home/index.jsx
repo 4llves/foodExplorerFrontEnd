@@ -6,13 +6,18 @@ import CookiePng from '../../assets/cookie.png'
 import { Section } from "../../components/Section";
 import { Card } from "../../components/Card";
 
+import SaladaRavanello from "../../assets/SaladaRavanello.png"
+import SpaguettiGambe from "../../assets/SpaguettiGambe.png"
+
+
+
 export function Home() {
   return (
     <Container>
       <Header />
 
       <main>
-        <div className="card">
+        <div className="head">
           <img src={CookiePng} alt="" />
 
 
@@ -24,7 +29,99 @@ export function Home() {
 
         <Section title="Refeições" />
 
-        <Card />
+        <div className="cards">
+          <Card
+            img={SaladaRavanello}
+            title="Salada Ravanello"
+            price={40}
+            amount={20}
+          />
+
+          <Card
+            img={SpaguettiGambe}
+            title="Spaguetti Gambe"
+            price={39}
+            amount={5}
+          />
+
+          <Card
+            img={SpaguettiGambe}
+            title="Spaguetti Gambe"
+            price={39}
+            amount={5}
+          />
+
+          <Card
+            img={SpaguettiGambe}
+            title="Spaguetti Gambe"
+            price={39}
+            amount={5}
+          />
+        </div>
+
+        <Section title="Pratos Principais" />
+
+        <div className="cards">
+          <Card
+            img={SaladaRavanello}
+            title="Salada Ravanello"
+            price={40}
+            amount={20}
+          />
+
+          <Card
+            img={SpaguettiGambe}
+            title="Spaguetti Gambe"
+            price={39}
+            amount={5}
+          />
+
+          <Card
+            img={SpaguettiGambe}
+            title="Spaguetti Gambe"
+            price={39}
+            amount={5}
+          />
+
+          <Card
+            img={SpaguettiGambe}
+            title="Spaguetti Gambe"
+            price={39}
+            amount={5}
+          />
+        </div>
+
+        <Section title="Pratos Principais" />
+
+        <div className="cards">
+          <Card
+            img={SaladaRavanello}
+            title="Salada Ravanello"
+            price={40}
+            amount={20}
+          />
+
+          <Card
+            img={SpaguettiGambe}
+            title="Spaguetti Gambe"
+            price={39}
+            amount={5}
+          />
+
+          <Card
+            img={SpaguettiGambe}
+            title="Spaguetti Gambe"
+            price={39}
+            amount={5}
+          />
+
+          <Card
+            img={SpaguettiGambe}
+            title="Spaguetti Gambe"
+            price={39}
+            amount={5}
+          />
+        </div>
       </main>
 
       <Footer />
