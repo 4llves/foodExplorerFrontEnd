@@ -3,7 +3,6 @@ import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 
 import CookiePng from '../../assets/cookie.png'
-import { Section } from "../../components/Section";
 import { Card } from "../../components/Card";
 
 import SaladaRavanello from "../../assets/SaladaRavanello.png"
@@ -27,101 +26,105 @@ export function Home() {
           </div>
         </div>
 
-        <Section title="Refeições" />
+        <section>
+          <h2>Refeições</h2>
 
-        <div className="cards">
-          <Card
-            img={SaladaRavanello}
-            title="Salada Ravanello"
-            price={40}
-            amount={20}
-          />
+          <div className="cards">
+            <Card
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              price={40}
+              amount={20}
+            />
 
-          <Card
-            img={SpaguettiGambe}
-            title="Spaguetti Gambe"
-            price={39}
-            amount={5}
-          />
+            <Card
+              img={SpaguettiGambe}
+              title="Spaguetti Gambe"
+              price={39}
+              amount={5}
+            />
 
-          <Card
-            img={SpaguettiGambe}
-            title="Spaguetti Gambe"
-            price={39}
-            amount={5}
-          />
+            <Card
+              img={SpaguettiGambe}
+              title="Spaguetti Gambe"
+              price={39}
+              amount={5}
+            />
 
-          <Card
-            img={SpaguettiGambe}
-            title="Spaguetti Gambe"
-            price={39}
-            amount={5}
-          />
-        </div>
+            <Card
+              img={SpaguettiGambe}
+              title="Spaguetti Gambe"
+              price={39}
+              amount={5}
+            />
+          </div>
+        </section>
 
-        <Section title="Pratos Principais" />
+        <section>
+          <h2>Pratos Principais</h2>
+          <div className="cards">
+            <Card
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              price={40}
+              amount={20}
+            />
 
-        <div className="cards">
-          <Card
-            img={SaladaRavanello}
-            title="Salada Ravanello"
-            price={40}
-            amount={20}
-          />
+            <Card
+              img={SpaguettiGambe}
+              title="Spaguetti Gambe"
+              price={39}
+              amount={5}
+            />
 
-          <Card
-            img={SpaguettiGambe}
-            title="Spaguetti Gambe"
-            price={39}
-            amount={5}
-          />
+            <Card
+              img={SpaguettiGambe}
+              title="Spaguetti Gambe"
+              price={39}
+              amount={5}
+            />
 
-          <Card
-            img={SpaguettiGambe}
-            title="Spaguetti Gambe"
-            price={39}
-            amount={5}
-          />
+            <Card
+              img={SpaguettiGambe}
+              title="Spaguetti Gambe"
+              price={39}
+              amount={5}
+            />
+          </div>
+        </section>
 
-          <Card
-            img={SpaguettiGambe}
-            title="Spaguetti Gambe"
-            price={39}
-            amount={5}
-          />
-        </div>
+        <section>
+          <h2>Pratos Principais</h2>
+          <div className="cards">
+            <Card
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              price={40}
+              amount={20}
+            />
 
-        <Section title="Pratos Principais" />
+            <Card
+              img={SpaguettiGambe}
+              title="Spaguetti Gambe"
+              price={39}
+              amount={5}
+            />
 
-        <div className="cards">
-          <Card
-            img={SaladaRavanello}
-            title="Salada Ravanello"
-            price={40}
-            amount={20}
-          />
+            <Card
+              img={SpaguettiGambe}
+              title="Spaguetti Gambe"
+              price={39}
+              amount={5}
+            />
 
-          <Card
-            img={SpaguettiGambe}
-            title="Spaguetti Gambe"
-            price={39}
-            amount={5}
-          />
-
-          <Card
-            img={SpaguettiGambe}
-            title="Spaguetti Gambe"
-            price={39}
-            amount={5}
-          />
-
-          <Card
-            img={SpaguettiGambe}
-            title="Spaguetti Gambe"
-            price={39}
-            amount={5}
-          />
-        </div>
+            <Card
+              img={SpaguettiGambe}
+              title="Spaguetti Gambe"
+              price={39}
+              amount={5}
+            />
+          </div>
+        </section>
       </main>
 
       <Footer />

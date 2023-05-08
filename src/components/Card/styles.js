@@ -14,8 +14,7 @@ export const Container = styled.div`
 
   background: ${({ theme }) => theme.COLORS.DARK['200']};
   border: 1px solid ${({ theme }) => theme.COLORS.DARK['300']};
-  border-radius: 8px;
-  margin: 0 0 2.4rem 2.4rem;
+  border-radius: 8px;    
 
   .like {
     display: block;    
@@ -70,10 +69,15 @@ export const Container = styled.div`
   ${media.small`
   `};
   ${media.medium`
+      
   `};
   ${media.large`
+    width: 30.4rem; 
+    height: 46.2rem;    
   `};
-  ${media.exlarge`
+  ${media.exlarge`  
+    width: 30.4rem;
+    height: 46.2rem;  
   `};
 `
 
