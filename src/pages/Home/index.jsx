@@ -8,8 +8,6 @@ import { Card } from "../../components/Card";
 import SaladaRavanello from "../../assets/SaladaRavanello.png"
 import SpaguettiGambe from "../../assets/SpaguettiGambe.png"
 
-
-
 export function Home() {
   return (
     <Container>
@@ -33,29 +31,41 @@ export function Home() {
             <Card
               img={SaladaRavanello}
               title="Salada Ravanello"
+              description="Massa fresca com camarões e pesto."
               price={40}
               amount={20}
             />
 
             <Card
-              img={SpaguettiGambe}
-              title="Spaguetti Gambe"
-              price={39}
-              amount={5}
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              description="Massa fresca com camarões e pesto."
+              price={40}
+              amount={20}
             />
 
             <Card
-              img={SpaguettiGambe}
-              title="Spaguetti Gambe"
-              price={39}
-              amount={5}
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              description="Massa fresca com camarões e pesto."
+              price={40}
+              amount={20}
             />
 
             <Card
-              img={SpaguettiGambe}
-              title="Spaguetti Gambe"
-              price={39}
-              amount={5}
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              description="Massa fresca com camarões e pesto."
+              price={40}
+              amount={20}
+            />
+
+            <Card
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              description="Massa fresca com camarões e pesto."
+              price={40}
+              amount={20}
             />
           </div>
         </section>

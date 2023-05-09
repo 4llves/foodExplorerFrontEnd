@@ -30,6 +30,7 @@ export const Container = styled.footer`
   }
 
   span {
+    color: ${({ theme }) => theme.COLORS.LIGHT['200']};
     font-size: 1.2rem;
   }
 
@@ -38,10 +39,21 @@ export const Container = styled.footer`
   ${media.medium`    
   `};
   ${media.large`
-    h1 {
-      color: ${({ theme }) => theme.COLORS.LIGHT['700']};
+    .logo {    
+      
+      h1 {
+        font-size: 2.4rem;
+      }     
+
+      img {
+        width: 3rem;
+      }      
+    }  
+    
+    span {
+      font-size: 1.4rem;
     }
   `};
-  ${media.exlarge`    
+  ${media.exlarge`
   `};
 `

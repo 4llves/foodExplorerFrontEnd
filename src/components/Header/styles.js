@@ -8,15 +8,21 @@ export const Container = styled.header`
 
   background: ${({ theme }) => theme.COLORS.DARK['700']};
   display: flex;  
-  justify-content: space-between;
+  justify-content: space-around;
 
-  svg {
-    font-size: 2.4rem;
+  .menu-amburguer {
+    svg {
+      font-size: 2.4rem;
+    }
   }
 
-  div {
-    position: relative;    
-     
+  .receipt-mobile {
+    position: relative;
+
+    svg {
+      font-size: 2.4rem;
+    }
+
     span {
       width: 20px;
       height: 20px;
@@ -57,7 +63,13 @@ export const Container = styled.header`
   `};
   ${media.medium`    
   `};
-  ${media.large`    
+  ${media.large`
+    padding: 2.4rem 12.3rem;
+
+    .menu-amburguer,
+    .receipt-mobile {
+      display: none;
+    }
   `};
   ${media.exlarge`    
   `};

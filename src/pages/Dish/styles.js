@@ -12,8 +12,8 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  main {
-    margin-bottom: 4.8rem;
+  main {    
+    height: 100vh;
   }
 
   .head {
