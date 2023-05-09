@@ -1,10 +1,9 @@
-import { Container } from "./styles";
+import { Container, ButtonHeader, Search } from "./styles";
 
-import { MagnifyingGlass, Receipt } from '@phosphor-icons/react'
+import { MagnifyingGlass, Receipt, SignOut } from '@phosphor-icons/react'
 
 import LogoExplorer from '../../assets/logoExplorer.svg'
 import { List } from "phosphor-react";
-import { Button } from "../Button";
 import { Input } from "../Input";
 
 const lala = 10
@@ -24,16 +23,22 @@ export function Header({ ...rest }) {
         <h1>food explorer</h1>
       </div>
 
-      <Input
-        placeholder="Pesquiar"
-        type="text"
-        icon={MagnifyingGlass}
-      />
+      <Search>
+        <Input
+          placeholder="Pesquiar"
+          type="text"
+          icon={MagnifyingGlass}
+        />
+      </Search>
 
-      <Button
+      <ButtonHeader
         icon={Receipt}
         title={`Pedidos (${lala})`}
       />
+
+      <div className="logout">
+        <SignOut />
+      </div>
 
       <div className="receipt-mobile">
         <Receipt />

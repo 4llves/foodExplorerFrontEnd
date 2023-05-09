@@ -1,19 +1,19 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
+  width: 100%;
   display: flex;
-  flex-direction: row;
   align-items: center;  
-  width: 31.6rem;
+  flex-direction: row;
   
   background-color: ${({ theme }) => theme.COLORS.DARK['900']};
   color: ${({ theme }) => theme.COLORS.LIGHT['500']};
   
-  border-radius: .8rem;
+  border-radius: .8rem; 
   
   > input {
-    width: 31.6rem;
     height: 4.8rem;
+    width: 100%;
     
     padding: 1.2rem 1.7rem;
 
@@ -27,9 +27,6 @@ export const Container = styled.div`
 
   > svg {
     margin-left: 1.4rem;
-    //padding: 1.2rem 1.7rem;
-    //size: 2.4rem;
+    font-size: 2rem;    
   }
-
-
 `

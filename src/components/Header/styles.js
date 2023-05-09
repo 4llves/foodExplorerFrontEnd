@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import media from "../../styles/media"
+import { Button } from "../Button"
+import { Input } from "../Input"
 
 export const Container = styled.header`
   /* grid-area: header; */
@@ -58,6 +60,9 @@ export const Container = styled.header`
     }
   }
 
+  .logout {
+    display: none;
+  }
 
   ${media.small`
   `};
@@ -65,6 +70,27 @@ export const Container = styled.header`
   `};
   ${media.large`
     padding: 2.4rem 12.3rem;
+    justify-content: center;
+    align-items: center;    
+    gap: 3.2rem;
+
+    .logo {
+      h1 {
+        font-size: 2.4rem;
+      }      
+
+      img {
+        width: 3rem;
+      }
+    }
+
+    .logout {
+      display: flex;
+
+      svg {
+        font-size: 2.2rem;
+      }
+    }
 
     .menu-amburguer,
     .receipt-mobile {
@@ -75,3 +101,24 @@ export const Container = styled.header`
   `};
 `
 
+export const ButtonHeader = styled(Button)`
+  display: none;
+  
+  ${media.large`
+    display: flex;
+    width: 21.6rem;
+    height: 5.6rem;    
+  `};
+`
+
+export const Search = styled.div`  
+  display: none;
+
+  ${media.large`
+    display: flex;
+    width: 20vw;        
+  `};
+  ${media.exlarge`
+    width: 58.1rem;    
+  `};
+`
