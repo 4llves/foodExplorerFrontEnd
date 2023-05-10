@@ -1,8 +1,7 @@
 import styled from "styled-components"
 import media from "../../styles/media"
-import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
-import { Section } from "../../components/Section"
+import { Button } from "../../components/Button"
 
 export const Container = styled.div`
   height: 100%;
@@ -13,199 +12,91 @@ export const Container = styled.div`
   flex-direction: column;
 
   main {    
-    height: 100vh;
+    padding: 1.6rem 5.6rem 3.3rem;
   }
 
-  .head {
-    display: flex;
-    border-radius: .5rem;
-
-    background: ${({ theme }) => theme.COLORS.GRADIENT['200']};
-    color: ${({ theme }) => theme.COLORS.LIGHT['300']};
-    width: 80vw;
-    height: 12rem;
-    
-    /* margin: 4.4rem 1.6rem 6.2rem 3.6rem;     */
-    margin: 4.4rem auto 4.2rem;
-
-    img {
-      display: block;
-      position: relative;
-
-      width: 19.1rem;      
-      height: 14.9rem;
-
-      opacity: 0.8;
-
-      top: -30px;
-      left: -30px;
-    }
-
-    .text {      
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: initial;
-      
-      position: relative;
-      right: 2.7rem;
-      
-      h1 {        
-        font-family: ${({ theme }) => theme.FONTS.TEXT};
-        font-size: 1.7rem;
-        margin-bottom: 8px;
-      }
-
-      p {
-        font-family: ${({ theme }) => theme.FONTS.TITLE};
-        font-size: 1.1rem;
-        line-height: 140%;        
-      }
-    }    
+  img {
+    display: block;
+    position: relative;
+    width: 26.5rem;
+    margin-inline: auto;
   }
 
   section {
-    display: flex;
-    flex-direction: column;
+    margin-top: 1.6rem;    
+    font-family: ${({ theme }) => theme.FONTS.TEXT};
+    font-family: ${({ theme }) => theme.COLORS.LIGHT['300']};
+    
+    h1 {
+      font-weight: 500;
+      font-size: 2.7rem;
+      text-align: center;
+    }
 
-    margin-left: 2.4rem;
-
-    h2 {
-      font-family: ${({ theme }) => theme.FONTS.TEXT};      
-      font-size: 1.8rem;
+    h3 {
+      margin-top: 2.4rem;
+      font-size: 1.6rem;
       line-height: 140%;
-      margin: 2.4rem 0;
+      font-weight: 400;
+      text-align: justify;
     }
 
-    .cards {
-      width: 90vw;
+    .ingredients {
+      margin: 2.4rem auto 4.8rem;
+      display: flex;  
+      gap: 2.4rem;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .buttons {
       display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      
 
-      overflow-x: scroll;
-      /* overflow: hidden; */
-      gap: 1.2rem;      
-    }
-  }
+      .amount {        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.2rem;
+        flex-direction: row;
+        gap: 1.9rem;
 
-  ${media.small`
-    .head {
-      height: 16rem;
-
-      img {
-        width: 27rem;
-        height: 18.9rem;
-      }
-
-      .text {
-        h1 {
-          font-size: 2rem;
-        }
-
-        p {
-          font-size: 1rem;
-        }
-      }      
-    }
-
-    section {
-      margin-left: 4rem;      
-    }    
-  `};
-  ${media.medium`  
-    .head {      
-      height: 19rem;
-
-      img {
-        width: 31.1rem;
-        height: 21.9rem;
-      }
-
-      .text {
-        h1 {
+        svg {          
           font-size: 3rem;
         }
-
-        p {
-          font-size: 1.2rem;
-        }
-      }      
+      }
     }
+  }
+  
 
-    section {
-      margin-left: 6rem;      
-    }
+  ${media.small`
+    
+  `};
+  ${media.medium`  
+    
   `};
   ${media.large`
-    .head {      
-      height: 24rem;
-
-      margin: 10rem auto 6.3rem;
-
-      img {
-        width: 42.8rem;
-        height: 26.9rem;
-      }
-
-      .text {
-        h1 {
-          font-size: 3.5rem;
-        }
-
-        p {
-          font-size: 1.4rem;
-        }
-      }
-    }
-
-    section {
-      margin-left: 8rem;
-
-      h2 {
-        font-size: 3.2rem;
-      }
-
-      .cards {        
-        gap: 2.7rem;
-      }
-    }
+    
   `};
   ${media.exlarge`  
-  .head {
-    width: 112rem;
-    height: 26rem;
-
-    margin: 16.4rem auto 6.2rem;
-
-      img {
-        width: 63.2rem;
-        height: 40.6rem;
-
-        top: -14.6rem;
-      }
-
-      .text {
-        h1 {
-          font-size: 4rem;
-        }
-
-        p {
-          font-size: 1.6rem;
-        }
-      }
-    }
-
-    section {
-      margin-left: 12.1rem;
-
-      h2 {
-        font-size: 3.2rem;
-      }
-    }
+  
   `};
 `
 
-export const ButtoSigIn = styled(Button)`  
+export const ButtonTextViewDish = styled(ButtonText)`
+  font-size: 2.4rem;
+  margin-bottom: 1.6rem;
 `
 
-export const ButtoTextSigIn = styled(ButtonText)`  
+export const ButtonPageViewDish = styled(Button)`
+  width: 18.8rem;
+
+  font-size: 1rem;
+
+  svg {
+    font-size: 1.7rem;
+  }
 `

@@ -5,12 +5,14 @@ import { Input } from "../Input"
 
 export const Container = styled.header`
   /* grid-area: header; */
-  width: 100%;  
-  padding: 5.6rem 2.8rem 2.4rem;
+  width: 100%;
+  height: 10.4rem; 
+
+  display: flex;    
+  align-items: center;
+  justify-content: space-around;
 
   background: ${({ theme }) => theme.COLORS.DARK['700']};
-  display: flex;  
-  justify-content: space-around;
 
   .menu-amburguer {
     svg {
@@ -68,8 +70,7 @@ export const Container = styled.header`
   `};
   ${media.medium`    
   `};
-  ${media.large`
-    padding: 2.4rem 12.3rem;
+  ${media.large`    
     justify-content: center;
     align-items: center;    
     gap: 3.2rem;
