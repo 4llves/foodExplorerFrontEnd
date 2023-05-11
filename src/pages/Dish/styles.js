@@ -94,27 +94,38 @@ export const Container = styled.div`
         margin: 0;
       }
 
+      .ingredients {
+        margin: 0;
+        gap: 1.2rem;
+        justify-content: left;
+      }
+
       .container {
         display: flex;
-        flex-direction: column;
-        align-items: start;
+        flex-direction: column;        
         justify-content: center;
 
-        h1 {          
-          font-weight: 500;
+        h1 {
+          text-align: justify;
           font-size: 40px;
           line-height: 140%;          
         }
 
         h3 {                    
-          font-size: 2.4rem;          
+          font-size: 2.4rem;
+          margin-bottom: 2.4rem;
+        }
+
+        .buttons {
+          margin-top: 4.8rem;
+          justify-content: left;
+          gap: 3.3rem;
         }
       }
     }
     
   `};
-  ${media.exlarge`  
-  
+  ${media.exlarge`    
   `};
 `
 
@@ -137,4 +148,9 @@ export const ButtonPageViewDish = styled(Button)`
   svg {
     font-size: 1.7rem;
   }
+
+  ${media.large`
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+  `}
 `

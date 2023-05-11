@@ -52,7 +52,7 @@ export function Dish() {
 
               <ButtonPageViewDish
                 icon={Receipt}
-                title={`pedir • R$ ${value},00`}
+                title={`PEDIR • R$ ${value},00`}
               />
             </div>
           </div>

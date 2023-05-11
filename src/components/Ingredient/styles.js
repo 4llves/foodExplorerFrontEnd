@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "../../styles/media";
 
 
 export const Container = styled.span`
@@ -17,9 +18,5 @@ export const Container = styled.span`
   align-items: center;
   justify-content: center;
   height: 3.2rem;  
-  gap: .8rem;
-
-  ${media.large`
-    align-items: flex-start;
-  `};
+  gap: .8rem;  
 `
