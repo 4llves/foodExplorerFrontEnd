@@ -11,7 +11,8 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  main {    
+  main {
+    width: 100%;    
     padding: 1.6rem 5.6rem 3.3rem;
   }
 
@@ -43,7 +44,7 @@ export const Container = styled.div`
 
     .ingredients {
       margin: 2.4rem auto 4.8rem;
-      display: flex;  
+      display: flex;
       gap: 2.4rem;
       justify-content: space-around;
       flex-wrap: wrap;
@@ -79,6 +80,37 @@ export const Container = styled.div`
     
   `};
   ${media.large`
+    main {
+      width: 100%;      
+      padding: 2.4rem 12.1rem 23.1rem;            
+    }
+  
+    section {      
+      display: flex;
+      gap: 4.7rem;
+
+      img {
+        width: 39rem;
+        margin: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+
+        h1 {          
+          font-weight: 500;
+          font-size: 40px;
+          line-height: 140%;          
+        }
+
+        h3 {                    
+          font-size: 2.4rem;          
+        }
+      }
+    }
     
   `};
   ${media.exlarge`  
@@ -86,9 +118,15 @@ export const Container = styled.div`
   `};
 `
 
-export const ButtonTextViewDish = styled(ButtonText)`
+export const ButtonTextViewDish = styled(ButtonText)`  
   font-size: 2.4rem;
   margin-bottom: 1.6rem;
+
+  ${media.large`
+    font-weight: 700;
+    line-height: 140%;
+    margin: 2.4rem 0 4.2rem 0;
+  `}
 `
 
 export const ButtonPageViewDish = styled(Button)`

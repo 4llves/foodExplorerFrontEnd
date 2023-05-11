@@ -23,35 +23,38 @@ export function Dish() {
           title="Voltar"
         />
 
-        <img src={SaladaRavanello} alt="" />
 
         <section>
-          <h1>Salada Ravanello</h1>
+          <img src={SaladaRavanello} alt="" />
 
-          <h3>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</h3>
+          <div className="container">
+            <h1>Salada Ravanello</h1>
 
-          <div className="ingredients">
-            {
-              ingredients.map((ingredient, i) =>
-                <Ingredient
-                  key={i}
-                  title={ingredient}
-                />
-              )
-            }
-          </div>
+            <h3>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</h3>
 
-          <div className="buttons">
-            <div className="amount">
-              <ButtonText icon={Minus} />
-              <p>{value}</p>
-              <ButtonText icon={Plus} />
+            <div className="ingredients">
+              {
+                ingredients.map((ingredient, i) =>
+                  <Ingredient
+                    key={i}
+                    title={ingredient}
+                  />
+                )
+              }
             </div>
 
-            <ButtonPageViewDish
-              icon={Receipt}
-              title={`pedir • R$ ${value},00`}
-            />
+            <div className="buttons">
+              <div className="amount">
+                <ButtonText icon={Minus} />
+                <p>{value}</p>
+                <ButtonText icon={Plus} />
+              </div>
+
+              <ButtonPageViewDish
+                icon={Receipt}
+                title={`pedir • R$ ${value},00`}
+              />
+            </div>
           </div>
         </section>
       </main>

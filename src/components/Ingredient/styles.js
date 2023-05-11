@@ -18,4 +18,8 @@ export const Container = styled.span`
   justify-content: center;
   height: 3.2rem;  
   gap: .8rem;
+
+  ${media.large`
+    align-items: flex-start;
+  `};
 `
