@@ -19,18 +19,18 @@ export function NewDish() {
               title="Voltar"
             />
 
-            <h1>Adiconar prato</h1>
+            <h1>Novo Prato</h1>
           </header>
 
           <section className="inputs">
 
             <label htmlFor="image" className="image">
               Imagem do prato
-              <UploadSimple />
 
               <Input
                 id="image"
-                placeholder="Refeição"
+                icon={UploadSimple}
+                placeholder="Selecione a imagem"
                 type="file"
               />
             </label>

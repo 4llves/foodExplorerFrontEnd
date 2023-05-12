@@ -19,15 +19,40 @@ export const Form = styled.form`
   width: 100%;
   margin: 2rem auto 0;
 
+  header {    
+    :first-child {
+      font-size: 1.4rem;
+      margin: 2rem auto 3rem;
+      font-family: ${({ theme }) => theme.FONTS.TEXT};      
+    }
+  }
+
   .image {
     input::-webkit-file-upload-button,
     input::file-selector-button {
       display: none;
-    }    
+    }
+
+    input[type='file'] {
+      opacity: 0;
+    }
+
+    input {      
+      color: ${({ theme }) => theme.COLORS.LIGHT['100']};
+    } 
+
+    svg {      
+      color: ${({ theme }) => theme.COLORS.LIGHT['100']};
+    }
+
+    
   }
 `
 
-export const ButtonTextViewDish = styled(ButtonText)`  
+export const ButtonTextViewDish = styled(ButtonText)`
+  margin: 2rem 0 3.2rem 0;
+  font-size: 1.6rem;
+
   ${media.exlarge`
   `};
 `
