@@ -1,18 +1,10 @@
-import { Container, ButtonTextViewDish, ButtonPageViewDish } from "./styles";
+import { Container, ButtonTextViewDish, ButtonPageNewDish, Form } from "./styles";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 
-import SaladaRavanello from "../../assets/SaladaRavanello.png"
-
-import { ButtonText } from "../../components/ButtonText";
-import { Ingredient } from "../../components/Ingredient";
-import { Button } from "../../components/Button";
-import { ArrowUUpLeft, Minus, Plus, Receipt } from "@phosphor-icons/react";
+import { ArrowUUpLeft, UploadSimple } from "@phosphor-icons/react";
 import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
-
-const value = 25
-const ingredients = ["alface", "cebola", "pepino", "rabanete", "tomate", "cebolinha"]
 
 export function NewDish() {
   return (
@@ -20,38 +12,78 @@ export function NewDish() {
       <Header />
 
       <main>
-        <ButtonTextViewDish
-          icon={ArrowUUpLeft}
-          title="Voltar"
+        <Form>
+          <header>
+            <ButtonTextViewDish
+              icon={ArrowUUpLeft}
+              title="Voltar"
+            />
+
+            <h1>Adiconar prato</h1>
+          </header>
+
+          <section className="inputs">
+
+            <label htmlFor="image" className="image">
+              Imagem do prato
+              <UploadSimple />
+
+              <Input
+                id="image"
+                placeholder="Refeição"
+                type="file"
+              />
+            </label>
+
+            <label htmlFor="name">
+              Nome
+              <Input
+                id="name"
+                placeholder="Ex: Salada Ceasar"
+              />
+            </label>
+
+            <label htmlFor="category">
+              Categoria
+              <Input
+                id="category"
+                placeholder="Refeição"
+              />
+            </label>
+          </section>
+
+
+          <section>
+            <label htmlFor="ingredients">
+              Ingredients
+              <Input
+                id="ingredients"
+                placeholder="Tags"
+              />
+            </label>
+
+            <label htmlFor="price">
+              Preço
+              <Input
+                id="price"
+                placeholder="R$ 00,00"
+              />
+            </label>
+          </section>
+
+          <label htmlFor="description">
+            Descrição
+
+            <TextArea
+              id="description"
+              placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+            />
+          </label>
+        </Form>
+
+        <ButtonPageNewDish
+          title="Salvar Alterações"
         />
-
-        <h1>Adiconar prato</h1>
-
-        <div className="wrapper">
-          <Input
-            placeholder="Image"
-          />
-
-          <Input
-            placeholder="Ex: Salada Ceasar"
-          />
-
-          <Input
-            placeholder="Refeição"
-          />
-
-          <Input
-            placeholder="Tags"
-          />
-
-          <Input
-            placeholder="Price"
-          />
-
-          <TextArea
-            placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
-          />
-        </div>
       </main>
 
       <Footer />

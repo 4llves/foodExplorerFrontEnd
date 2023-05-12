@@ -7,16 +7,24 @@ export const Container = styled.div`
   height: 100%;
   display: flex;
   flex: 1;
-  align-items: center;  
+  align-items: center;
   justify-content: center;
-  flex-direction: column;
-
-  main {
-    height: 100vh;
-  }
+  flex-direction: column;  
   
-  ${media.exlarge`    
+  ${media.exlarge`
   `};
+`
+
+export const Form = styled.form`
+  width: 100%;
+  margin: 2rem auto 0;
+
+  .image {
+    input::-webkit-file-upload-button,
+    input::file-selector-button {
+      display: none;
+    }    
+  }
 `
 
 export const ButtonTextViewDish = styled(ButtonText)`  
@@ -24,7 +32,9 @@ export const ButtonTextViewDish = styled(ButtonText)`
   `};
 `
 
-export const ButtonPageViewDish = styled(Button)`
-  ${media.exlarge`    
+export const ButtonPageNewDish = styled(Button)`
+  margin-top: 2rem;
+
+  ${media.exlarge`
   `};
 `
