@@ -22,7 +22,7 @@ export function NewDish() {
             <h1>Novo Prato</h1>
           </header>
 
-          <section className="inputs">
+          <section className="col-1">
 
             <label htmlFor="image" className="image">
               Imagem do prato
@@ -53,7 +53,7 @@ export function NewDish() {
           </section>
 
 
-          <section>
+          <section className="col-2">
             <label htmlFor="ingredients">
               Ingredients
               <Input
