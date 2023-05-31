@@ -11,8 +11,8 @@ function AuthProvider({ children }) {
       const res = await api.post("/sessions", { email, password });
       const { user, token } = res.data
 
-      localStorage.setItem("@rocketmovies:user", JSON.stringify(user));
-      localStorage.setItem("@rocketmovies:token", token);
+      localStorage.setItem("@foodexplorer:user", JSON.stringify(user));
+      localStorage.setItem("@foodexplorer:token", token);
 
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
@@ -28,8 +28,8 @@ function AuthProvider({ children }) {
   }
 
   function signOut() {
-    localStorage.removeItem('@rocketmovies:token');
-    localStorage.removeItem('@rocketmovies:user');
+    localStorage.removeItem('@foodexplorer:token');
+    localStorage.removeItem('@foodexplorer:user');
 
     setData({});
   }
@@ -48,7 +48,7 @@ function AuthProvider({ children }) {
 
       await api.put("/users", user);
 
-      localStorage.setItem("@rocketmovies:user", JSON.stringify(user));
+      localStorage.setItem("@foodexplorer:user", JSON.stringify(user));
 
       setData({
         user,
@@ -67,8 +67,8 @@ function AuthProvider({ children }) {
   }
 
   useEffect(() => {
-    const user = localStorage.getItem('@rocketmovies:user');
-    const token = localStorage.getItem('@rocketmovies:token');
+    const user = localStorage.getItem('@foodexplorer:user');
+    const token = localStorage.getItem('@foodexplorer:token');
 
     if (token && user) {
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`;

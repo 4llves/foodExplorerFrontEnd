@@ -59,7 +59,7 @@ export function SignUp() {
             Email
           </label>
           <Input
-            placeholder="Email: exemplo@exemplo.com.br"
+            placeholder="Email: email@email.com"
             type="text"
             icon={FiMail}
             onChange={e => setEmail(e.target.value)}
@@ -71,7 +71,7 @@ export function SignUp() {
             Senha
           </label>
           <Input
-            placeholder="Email: exemplo@exemplo.com.br"
+            placeholder="Senha: *********************"
             type="password"
             icon={FiLock}
             onChange={e => setPassword(e.target.value)}

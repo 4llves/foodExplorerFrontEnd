@@ -1,9 +1,21 @@
+import { useState } from "react";
 import { FiLock, FiMail } from "react-icons/fi";
 import { Input } from "../../components/Input";
 import { Logo } from "../../components/Logo";
+import { useAuth } from "../../hooks/auth";
 import { ButtoSigIn, ButtoTextSigIn, Container, Form } from "./styles";
 
+
 export function SignIn() {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  const { signIn } = useAuth()
+
+  function handleSignIn() {
+    signIn({ email, password })
+  }
+
   return (
     <Container>
       <Logo />
@@ -18,9 +30,10 @@ export function SignIn() {
             Email
           </label>
           <Input
-            placeholder="Email: exemplo@exemplo.com.br"
+            placeholder="Email: email@email.com"
             type="text"
             icon={FiMail}
+            onChange={e => setEmail(e.target.value)}
           />
         </div>
 
@@ -29,14 +42,16 @@ export function SignIn() {
             Senha
           </label>
           <Input
-            placeholder="Email: exemplo@exemplo.com.br"
+            placeholder="Senha: *********************"
             type="password"
             icon={FiLock}
+            onChange={e => setPassword(e.target.value)}
           />
         </div>
 
         <ButtoSigIn
           title="Entrar"
+          onClick={handleSignIn}
         />
 
         <ButtoTextSigIn
