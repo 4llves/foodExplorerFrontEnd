@@ -41,6 +41,7 @@ export function SignIn() {
 
         <ButtoTextSigIn
           title="Criar uma conta"
+          to="/register"
         />
       </Form>
     </Container>

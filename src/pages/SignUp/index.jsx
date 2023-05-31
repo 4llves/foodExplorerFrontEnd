@@ -4,7 +4,7 @@ import { Input } from "../../components/Input";
 import { Logo } from "../../components/Logo";
 import { ButtoSigIn, ButtoTextSigIn, Container, Form } from "./styles";
 
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { api } from '../../services/api';
 
 export function SignUp() {
@@ -12,7 +12,7 @@ export function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   function handleSignUp() {
     if (!name || !email || !password) {
@@ -22,7 +22,7 @@ export function SignUp() {
     api.post("/users", { name, email, password })
       .then(() => {
         alert("Usuario cadastrado com sucesso!")
-        // navigate("/")
+        navigate("/")
       })
       .catch(error => {
         if (error.res) {
@@ -85,6 +85,7 @@ export function SignUp() {
 
         <ButtoTextSigIn
           title="Já tenho uma conta"
+          to="/"
         />
       </Form>
     </Container>

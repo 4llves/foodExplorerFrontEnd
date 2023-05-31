@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import media from "../../styles/media";
 
-export const Container = styled.button`   
+export const Container = styled(Link)`   
   color: ${({ theme }) => theme.COLORS.LIGHT['100']};
   font-family: ${({ theme }) => theme.FONTS.TEXT};
   background: none;
