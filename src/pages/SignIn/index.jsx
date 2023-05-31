@@ -1,7 +1,7 @@
+import { FiLock, FiMail } from "react-icons/fi";
 import { Input } from "../../components/Input";
 import { Logo } from "../../components/Logo";
-import { Container, Form, ButtoSigIn, ButtoTextSigIn } from "./styles";
-import { FiLock, FiMail } from "react-icons/fi"
+import { ButtoSigIn, ButtoTextSigIn, Container, Form } from "./styles";
 
 export function SignIn() {
   return (
