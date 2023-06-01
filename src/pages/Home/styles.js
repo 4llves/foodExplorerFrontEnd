@@ -80,7 +80,7 @@ export const Container = styled.div`
       width: 90vw;
       display: flex;
 
-      /* overflow-x: scroll; */
+      overflow-x: scroll;
       /* overflow: hidden; */
       gap: 1.2rem;      
     }

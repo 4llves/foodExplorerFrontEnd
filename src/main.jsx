@@ -7,8 +7,8 @@ import { ThemeProvider } from 'styled-components'
 import GlobalStyles from './styles/global'
 import theme from './styles/theme'
 
-import Slider from './components/Slider'
-// import { Routes } from './routes'
+// import Slider from './components/Slider'
+import { Routes } from './routes'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <AuthProvider>
-        <Slider />
+        <Routes />
       </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>,

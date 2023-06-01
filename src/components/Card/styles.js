@@ -20,9 +20,8 @@ export const Container = styled.div`
     display: block;    
     position: relative;
     
-    width: 100%;
     top: 1.6rem;
-    left: 17rem;
+    left: 8rem;
     
     svg {
       color: ${({ theme }) => theme.COLORS.LIGHT['300']};
@@ -88,7 +87,7 @@ export const Container = styled.div`
 
     .like {     
       top: 1.6rem;
-      left: 26.2rem;
+      left: 12rem;
     
       svg {
         font-size: 2.4rem;

@@ -7,7 +7,6 @@ import { Card } from "../../components/Card";
 
 import SaladaRavanello from "../../assets/SaladaRavanello.png";
 import SpaguettiGambe from "../../assets/SpaguettiGambe.png";
-import Slider from "../../components/Slider";
 
 export function Home() {
   return (
@@ -29,63 +28,62 @@ export function Home() {
           <h2>Refeições</h2>
 
           <div className="cards">
-            <Slider>
-              <Card
-                img={SaladaRavanello}
-                title="Salada Ravanello"
-                description="Massa fresca com camarões e pesto."
-                price={40}
-                amount={20}
-              />
 
-              <Card
-                img={SaladaRavanello}
-                title="Salada Ravanello"
-                description="Massa fresca com camarões e pesto."
-                price={40}
-                amount={20}
-              />
+            <Card
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              description="Massa fresca com camarões e pesto."
+              price={40}
+              amount={20}
+            />
 
-              <Card
-                img={SaladaRavanello}
-                title="Salada Ravanello"
-                description="Massa fresca com camarões e pesto."
-                price={40}
-                amount={20}
-              />
+            <Card
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              description="Massa fresca com camarões e pesto."
+              price={40}
+              amount={20}
+            />
 
-              <Card
-                img={SaladaRavanello}
-                title="Salada Ravanello"
-                description="Massa fresca com camarões e pesto."
-                price={40}
-                amount={20}
-              />
+            <Card
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              description="Massa fresca com camarões e pesto."
+              price={40}
+              amount={20}
+            />
 
-              <Card
-                img={SaladaRavanello}
-                title="Salada Ravanello"
-                description="Massa fresca com camarões e pesto."
-                price={40}
-                amount={20}
-              />
+            <Card
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              description="Massa fresca com camarões e pesto."
+              price={40}
+              amount={20}
+            />
 
-              <Card
-                img={SaladaRavanello}
-                title="Salada Ravanello"
-                description="Massa fresca com camarões e pesto."
-                price={40}
-                amount={20}
-              />
+            <Card
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              description="Massa fresca com camarões e pesto."
+              price={40}
+              amount={20}
+            />
 
-              <Card
-                img={SaladaRavanello}
-                title="Salada Ravanello"
-                description="Massa fresca com camarões e pesto."
-                price={40}
-                amount={20}
-              />
-            </Slider>
+            <Card
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              description="Massa fresca com camarões e pesto."
+              price={40}
+              amount={20}
+            />
+
+            <Card
+              img={SaladaRavanello}
+              title="Salada Ravanello"
+              description="Massa fresca com camarões e pesto."
+              price={40}
+              amount={20}
+            />
 
             {/* <Card
               img={SaladaRavanello}

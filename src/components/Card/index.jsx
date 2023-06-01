@@ -1,5 +1,5 @@
-import { Container, ButtonCard } from "./styles";
 import { HeartStraight, Minus, Plus } from "@phosphor-icons/react";
+import { ButtonCard, Container } from "./styles";
 
 import { ButtonText } from '../../components/ButtonText';
 
