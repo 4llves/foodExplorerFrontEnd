@@ -1,17 +1,17 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { Dish } from '../pages/Dish';
+import { CreateDish } from '../pages/CreateDish';
+import { EditDish } from '../pages/EditDish';
 import { Home } from '../pages/Home';
-import { NewDish } from '../pages/NewDish';
-// import { Profile } from '../pages/Profile';
+import { PreviewDish } from '../pages/PreviewDish';
 
 export function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/createdish" element={<NewDish />} />
-      <Route path="/dish/:id" element={<Dish />} />
-      {/* <Route path="/profile" element={<Profile />} /> */}
+      <Route path="/createdish" element={<CreateDish />} />
+      <Route path="/editdish/:id" element={<EditDish />} />
+      <Route path="/previewdish/:id" element={<PreviewDish />} />
     </Routes>
   );
 }

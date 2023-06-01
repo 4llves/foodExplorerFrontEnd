@@ -1,12 +1,12 @@
-import { Container, ButtonTextViewDish, ButtonPageNewDish, Form } from "./styles";
-import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
+import { ButtonPageNewDish, ButtonTextViewDish, Container, Form } from "./styles";
 
 import { ArrowUUpLeft, UploadSimple } from "@phosphor-icons/react";
 import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
 
-export function NewDish() {
+export function EditDish() {
   return (
     <Container>
       <Header />

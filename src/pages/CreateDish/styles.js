@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import media from "../../styles/media"
-import { ButtonText } from "../../components/ButtonText"
 import { Button } from "../../components/Button"
+import { ButtonText } from "../../components/ButtonText"
+import media from "../../styles/media"
 
 export const Container = styled.div`
   height: 100%;
@@ -17,7 +17,7 @@ export const Container = styled.div`
     align-items: center;    
   }
   
-  ${media.exlarge`
+  ${media.exlarge`      
   `};
 `
 
@@ -74,10 +74,12 @@ export const Form = styled.form`
 
     svg {
       color: ${({ theme }) => theme.COLORS.LIGHT['100']};
-    }
-
-    
+    }    
   }
+
+  ${media.exlarge`
+      
+  `};
 `
 
 export const ButtonTextViewDish = styled(ButtonText)`

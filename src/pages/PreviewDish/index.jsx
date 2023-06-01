@@ -1,18 +1,17 @@
-import { Container, ButtonTextViewDish, ButtonPageViewDish } from "./styles";
-import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
+import { ButtonPageViewDish, ButtonTextViewDish, Container } from "./styles";
 
-import SaladaRavanello from "../../assets/SaladaRavanello.png"
+import SaladaRavanello from "../../assets/SaladaRavanello.png";
 
+import { ArrowUUpLeft, Minus, Plus, Receipt } from "@phosphor-icons/react";
 import { ButtonText } from "../../components/ButtonText";
 import { Ingredient } from "../../components/Ingredient";
-import { Button } from "../../components/Button";
-import { ArrowUUpLeft, Minus, Plus, Receipt } from "@phosphor-icons/react";
 
 const value = 25
 const ingredients = ["alface", "cebola", "pepino", "rabanete", "tomate", "cebolinha"]
 
-export function Dish() {
+export function PreviewDish() {
   return (
     <Container>
       <Header />

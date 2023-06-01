@@ -1,22 +1,48 @@
 import styled from "styled-components";
-import media from "../../styles/media";
 
+export const Container = styled.div`
+  height: 36px;
 
-export const Container = styled.span`
-  font-size: 1.4rem;
-  font-family: ${({ theme }) => theme.FONTS.TEXT};
-  color: ${({ theme }) => theme.COLORS.LIGHT['100']};
-  font-weight: 500;
-  line-height: 2.4rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 
-  padding: .4rem .8rem;
-  border-radius: 5px;
-  background: ${({ theme }) => theme.COLORS.DARK['1000']};
-  
-  display: flex;  
-  flex-direction: row;
+  display: inline;
   align-items: center;
-  justify-content: center;
-  height: 3.2rem;  
-  gap: .8rem;  
-`
+
+  /* ${({ theme }) => theme.COLORS.DARK['700']}; */
+
+  background-color: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.LIGHT['600']};
+  color: ${({ theme, isNew }) => isNew ? theme.COLORS.LIGHT['500'] : theme.COLORS.LIGHT['100']};
+
+  border: ${({ theme, isNew }) => isNew ? `1px dashed ${theme.COLORS.LIGHT['500']}` : "none"};
+
+  margin-bottom: 0.5rem;
+
+  > input {
+    color: ${({ theme }) => theme.COLORS.LIGHT['100']};
+    font-size: 0.9rem;
+    max-width: 110px;
+    background: transparent;
+    border: none;
+
+    &::placeholder {
+      color: ${({ theme, isNew }) => isNew ? theme.COLORS.LIGHT['500'] : theme.COLORS.LIGHT['100']};
+    }
+  }
+
+  > button {
+    
+    background: none;
+    border: none;
+    
+    > svg {
+      width: 100%;
+      height: 100%;
+      color: ${({ theme, isNew }) => !isNew ? `${theme.COLORS.LIGHT['100']}` : `${theme.COLORS.LIGHT['500']}`};
+      
+      &:hover {
+        color: ${({ theme }) => theme.COLORS.LIGHT['100']};
+      }
+    }
+  }
+`;
