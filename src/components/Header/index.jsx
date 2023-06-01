@@ -1,14 +1,16 @@
-import { Container, ButtonHeader, Search } from "./styles";
+import { ButtonHeader, Container, Search } from "./styles";
 
-import { MagnifyingGlass, Receipt, SignOut } from '@phosphor-icons/react'
+import { MagnifyingGlass, Receipt, SignOut } from '@phosphor-icons/react';
 
-import LogoExplorer from '../../assets/logoExplorer.svg'
 import { List } from "phosphor-react";
+import LogoExplorer from '../../assets/logoExplorer.svg';
+import { useAuth } from "../../hooks/auth";
 import { Input } from "../Input";
 
-const lala = 10
+const quantityDishes = 10
 
 export function Header({ ...rest }) {
+  const { signOut } = useAuth()
 
   return (
     <Container {...rest}>
@@ -33,10 +35,10 @@ export function Header({ ...rest }) {
 
       <ButtonHeader
         icon={Receipt}
-        title={`Pedidos (${lala})`}
+        title={`Pedidos (${quantityDishes})`}
       />
 
-      <div className="logout">
+      <div className="logout" onClick={signOut}>
         <SignOut />
       </div>
 

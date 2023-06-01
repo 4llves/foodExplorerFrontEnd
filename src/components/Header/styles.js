@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import media from "../../styles/media"
 import { Button } from "../Button"
-import { Input } from "../Input"
 
 export const Container = styled.header`
   /* grid-area: header; */
@@ -64,6 +63,7 @@ export const Container = styled.header`
 
   .logout {
     display: none;
+    cursor: pointer;
   }
 
   ${media.small`

@@ -1,8 +1,7 @@
 import styled from "styled-components"
-import media from "../../styles/media"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
-import { Section } from "../../components/Section"
+import media from "../../styles/media"
 
 export const Container = styled.div`
   height: 100%;
@@ -81,7 +80,7 @@ export const Container = styled.div`
       width: 90vw;
       display: flex;
 
-      overflow-x: scroll;
+      /* overflow-x: scroll; */
       /* overflow: hidden; */
       gap: 1.2rem;      
     }
