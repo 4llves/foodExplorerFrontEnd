@@ -1,15 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 36px;
+  height: 36px;  
 
   padding: 0.5rem;
   border-radius: 0.5rem;
 
   display: inline;
-  align-items: center;
-
-  /* ${({ theme }) => theme.COLORS.DARK['700']}; */
+  align-items: center;  
 
   background-color: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.LIGHT['600']};
   color: ${({ theme, isNew }) => isNew ? theme.COLORS.LIGHT['500'] : theme.COLORS.LIGHT['100']};

@@ -20,6 +20,8 @@ export function CreateDish() {
   const [newIngredient, setNewIngredient] = useState([])
 
   async function handleNewDishes() {
+    const fileUpload = new FormData()
+
     if (!name) {
       return alert("Mermão, não tem como cadastrar a receita sem um nome. Digita um ai pra nós.")
     }
@@ -40,6 +42,30 @@ export function CreateDish() {
       return alert("Essa descrição é obrigatória. Afinal de contas... como vou saber algo sobre a receita sem uma observação ou descrição?!")
     }
 
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("category", category);
+    formData.append("price", price);
+
+    ingredients.map(ingredient => (
+      formData.append("ingredients", ingredient)
+    ))
+
+    await api
+      .post("/dishes", formData)
+      .then(alert("Prato adicionado com sucesso!"), navigate("/"))
+      .catch((error) => {
+        if (error.response) {
+          alert(error.response.data.message);
+        } else {
+          alert("Erro ao criar o prato!");
+        }
+      });
+
+    // setLoading(false);
+
     // console.log({
     //   name,
     //   image,
@@ -49,16 +75,29 @@ export function CreateDish() {
     //   ingredients
     // })
 
-    await api.post("/dishes", {
-      name,
-      image,
-      category,
-      description,
-      price,
-      ingredients
-    });
+    // fileUpload.append("image", image)
 
-    alert("Receita cadastrada com sucesso... 👌")
+    // const config = {
+    //   headers: {
+    //     'Content-Type': 'multipart/form-data',
+    //   },
+    // };
+
+
+    // alert("Receita cadastrada com sucesso... 👌")
+    // navigate("/");
+
+    // await api.post("/dishes", {
+    //   name,
+    //   image,
+    //   category,
+    //   description,
+    //   price,
+    //   ingredients
+    // });
+
+    // await api.patch(`/dishes/image/${dishId}`, fileUpload, config)
+    // alert("Receita cadastrada com sucesso... 👌")
     // navigate(-1);
   }
 
