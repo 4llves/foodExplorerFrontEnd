@@ -68,18 +68,18 @@ export function EditDish() {
     //   ingredients
     // })
 
-    const formData = new FormData();
-    formData.append("image", image);
-    formData.append("name", name);
-    formData.append("description", description);
-    formData.append("category", category);
-    formData.append("price", price);
+    const formData = new FormData()
+    formData.append("image", image)
+    formData.append("name", name)
+    formData.append("description", description)
+    formData.append("category", category)
+    formData.append("price", price)
 
 
-    ingredients.map((ingredient) => formData.append("ingredients", ingredient));
+    ingredients.map((ingredient) => formData.append("ingredients", ingredient))
 
 
-    api.post("/dishes", formData)
+    await api.put(`/dishes/${params.id}`, formData);
 
     alert("Nota criada com sucesso! 👌")
     // navigate(-1);
@@ -92,6 +92,7 @@ export function EditDish() {
 
       const { name, description, category, price, ingredients } =
         response.data;
+
       setName(name);
       setDescription(description);
       setCategory(category);
