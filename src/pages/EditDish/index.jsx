@@ -74,10 +74,6 @@ export function EditDish() {
       );
     }
 
-    if (ingredients.length < 1) {
-      return alert("Adicione pelo menos um ingrediente");
-    }
-
     const formData = new FormData()
     formData.append("image", image)
     formData.append("name", name)
@@ -102,11 +98,13 @@ export function EditDish() {
       const { name, description, category, price, ingredients } =
         res.data;
 
+      const ingredientList = ingredients.map((ingredient) => ingredient.name)
+
       setName(name);
       setDescription(description);
       setCategory(category);
       setPrice(price);
-      setIngredients(ingredients.map((ingredient) => ingredient.name));
+      setIngredients(ingredientList);
     }
 
     fetchDish();
