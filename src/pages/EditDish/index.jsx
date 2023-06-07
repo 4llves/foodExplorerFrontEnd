@@ -2,7 +2,7 @@ import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { ButtonPageNewDish, ButtonTextViewDish, Container, Form } from "./styles";
 
-import { ArrowUUpLeft } from "@phosphor-icons/react";
+import { ArrowUUpLeft, UploadSimple } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Ingredient } from "../../components/Ingredient";
@@ -68,6 +68,16 @@ export function EditDish() {
     //   ingredients
     // })
 
+    if (newIngredient) {
+      return alert(
+        "Você deixou um ingrediente no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio."
+      );
+    }
+
+    if (ingredients.length < 1) {
+      return alert("Adicione pelo menos um ingrediente");
+    }
+
     const formData = new FormData()
     formData.append("image", image)
     formData.append("name", name)
@@ -76,8 +86,7 @@ export function EditDish() {
     formData.append("price", price)
 
 
-    ingredients.map((ingredient) => formData.append("ingredients", ingredient))
-
+    ingredients.map((ingredient) => formData.append("ingredients", ingredient));
 
     await api.put(`/dishes/${params.id}`, formData);
 
@@ -88,10 +97,10 @@ export function EditDish() {
 
   useEffect(() => {
     async function fetchDish() {
-      const response = await api.get(`/dishes/${params.id}`);
+      const res = await api.get(`/dishes/${params.id}`);
 
       const { name, description, category, price, ingredients } =
-        response.data;
+        res.data;
 
       setName(name);
       setDescription(description);
@@ -123,12 +132,16 @@ export function EditDish() {
             <label htmlFor="image" className="image">
               Imagem do prato
 
-              <input
-                id="image"
-                // icon={UploadSimple}
-                type="file"
-                onChange={(e) => setImage(e.target.files[0])}
-              />
+              <div>
+                <UploadSimple size={24} />
+                <span>Selecione a imagem</span>
+                <input
+                  id="image"
+                  // icon={UploadSimple}
+                  type="file"
+                  onChange={(e) => setImage(e.target.files[0])}
+                />
+              </div>
             </label>
 
             <label htmlFor="name">
