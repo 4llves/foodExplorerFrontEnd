@@ -5,10 +5,32 @@ import { Container } from "./styles";
 import CookiePng from '../../assets/cookie.png';
 import { Card } from "../../components/Card";
 
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import SaladaRavanello from "../../assets/SaladaRavanello.png";
 import SpaguettiGambe from "../../assets/SpaguettiGambe.png";
+import { api } from "../../services/api";
 
 export function Home() {
+  const [search, setSearch] = useState('')
+  const [dishes, setDishes] = useState([])
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    async function fetchDishes() {
+      const res = await api.get(`/dish?name=${search}`)
+      console.log(res.data)
+      setDishes(res.data)
+    }
+
+    fetchDishes()
+  }, [search])
+
+  function handleEditDish(id) {
+    navigate(`/editdish/${id}`)
+  }
+
   return (
     <Container>
       <Header />
@@ -29,93 +51,21 @@ export function Home() {
 
           <div className="cards">
 
-            <Card
-              img={SaladaRavanello}
-              title="Salada Ravanello"
-              description="Massa fresca com camarões e pesto."
-              price={40}
-              amount={20}
-            />
+            {/* {
+              dishes.map(dish => {
+                <Card
+                  key={String(dish.id)}
+                  data={dish}
+                  onClick={() => { handleEditDish(dish.id) }}
+                // img={SaladaRavanello}
+                // title="Salada Ravanello"
+                // description="Massa fresca com camarões e pesto."
+                // price={40}
+                // amount={20}
+                />
+              })
+            } */}
 
-            <Card
-              img={SaladaRavanello}
-              title="Salada Ravanello"
-              description="Massa fresca com camarões e pesto."
-              price={40}
-              amount={20}
-            />
-
-            <Card
-              img={SaladaRavanello}
-              title="Salada Ravanello"
-              description="Massa fresca com camarões e pesto."
-              price={40}
-              amount={20}
-            />
-
-            <Card
-              img={SaladaRavanello}
-              title="Salada Ravanello"
-              description="Massa fresca com camarões e pesto."
-              price={40}
-              amount={20}
-            />
-
-            <Card
-              img={SaladaRavanello}
-              title="Salada Ravanello"
-              description="Massa fresca com camarões e pesto."
-              price={40}
-              amount={20}
-            />
-
-            <Card
-              img={SaladaRavanello}
-              title="Salada Ravanello"
-              description="Massa fresca com camarões e pesto."
-              price={40}
-              amount={20}
-            />
-
-            <Card
-              img={SaladaRavanello}
-              title="Salada Ravanello"
-              description="Massa fresca com camarões e pesto."
-              price={40}
-              amount={20}
-            />
-
-            {/* <Card
-              img={SaladaRavanello}
-              title="Salada Ravanello"
-              description="Massa fresca com camarões e pesto."
-              price={40}
-              amount={20}
-            />
-
-            <Card
-              img={SaladaRavanello}
-              title="Salada Ravanello"
-              description="Massa fresca com camarões e pesto."
-              price={40}
-              amount={20}
-            />
-
-            <Card
-              img={SaladaRavanello}
-              title="Salada Ravanello"
-              description="Massa fresca com camarões e pesto."
-              price={40}
-              amount={20}
-            />
-
-            <Card
-              img={SaladaRavanello}
-              title="Salada Ravanello"
-              description="Massa fresca com camarões e pesto."
-              price={40}
-              amount={20}
-            /> */}
           </div>
         </section>
 

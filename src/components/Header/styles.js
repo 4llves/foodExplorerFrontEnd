@@ -45,21 +45,38 @@ export const Container = styled.header`
     }
   }
 
-  .logo {
+  .wrapper-logo {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    
-    h1 {
-      font-size: 2rem;
+    gap: 0.8rem;
+
+    span {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: ${({ theme }) => theme.COLORS.CAKE['200']};
     }
 
-    gap: 1.0rem;
+    .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      
+      h1 {
+        font-size: 2rem;
+      }
 
-    img {
-      width: 2.4rem;
+      gap: 1.0rem;
+
+      img {
+        width: 2.4rem;
+      }
     }
+
   }
+
+  
 
   .logout {
     display: none;
@@ -70,20 +87,28 @@ export const Container = styled.header`
   `};
   ${media.medium`    
   `};
-  ${media.large`    
+  ${media.large`
     justify-content: center;
     align-items: center;    
     gap: 3.2rem;
 
-    .logo {
-      h1 {
-        font-size: 2.4rem;
-      }      
+    .wrapper-logo {
+      flex-direction: column;      
+      align-items: end;
+      gap: 0;
+                 
+      .logo {
+        h1 {
+          font-size: 2.4rem;
+        }      
 
-      img {
-        width: 3rem;
+        img {
+          width: 3rem;
+        }
       }
     }
+
+    
 
     .logout {
       display: flex;

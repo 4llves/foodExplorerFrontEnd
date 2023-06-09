@@ -1,22 +1,29 @@
-import { HeartStraight, Minus, Plus } from "@phosphor-icons/react";
+import { HeartStraight, Minus, Pencil, Plus } from "@phosphor-icons/react";
 import { ButtonCard, Container } from "./styles";
 
 import { ButtonText } from '../../components/ButtonText';
+import { useAuth } from "../../hooks/auth";
 
-export function Card({ img, title, price, amount, description, ...rest }) {
+export function Card({ data, amount, ...rest }) {
+  const { user } = useAuth()
+
   return (
     <Container {...rest}>
       <div className="like">
-        <ButtonText icon={HeartStraight} />
+        {
+          user.isAdmin
+            ? <ButtonText icon={Pencil} />
+            : <ButtonText icon={HeartStraight} />
+        }
       </div>
 
-      <img src={img} alt="" />
+      {/* <img src={data.image} alt="" /> */}
 
-      <h1>{title} &gt;</h1>
+      <h1>{data.name} &gt;</h1>
 
-      <h3>{description}</h3>
+      <h3>{data.description}</h3>
 
-      <span>R$ {price},00</span>
+      <span>R$ {data.price},00</span>
 
       <div className="bottom-card">
         <div className="amount">
