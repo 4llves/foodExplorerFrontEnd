@@ -53,6 +53,7 @@ export const Container = styled.header`
     gap: 0.8rem;
 
     span {
+      margin-top: 0.2rem; // tava dando agonia em ver ele um pouco pra cima mesmo centralizado
       font-size: 1.2rem;
       font-weight: 400;
       color: ${({ theme }) => theme.COLORS.CAKE['200']};

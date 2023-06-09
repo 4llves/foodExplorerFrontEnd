@@ -3,21 +3,23 @@ import { ButtonCard, Container } from "./styles";
 
 import { ButtonText } from '../../components/ButtonText';
 import { useAuth } from "../../hooks/auth";
+import { api } from "../../services/api";
 
 export function Card({ data, amount, ...rest }) {
   const { user } = useAuth()
+  console.log(data)
 
   return (
     <Container {...rest}>
       <div className="like">
         {
           user.isAdmin
-            ? <ButtonText icon={Pencil} />
+            ? <ButtonText icon={Pencil} to={`/editdish/${data.id}`} />
             : <ButtonText icon={HeartStraight} />
         }
       </div>
 
-      {/* <img src={data.image} alt="" /> */}
+      <img src={`${api.defaults.baseURL}/files/dishImage/${data.image}`} alt="Plate img" />
 
       <h1>{data.name} &gt;</h1>
 
@@ -25,15 +27,23 @@ export function Card({ data, amount, ...rest }) {
 
       <span>R$ {data.price},00</span>
 
-      <div className="bottom-card">
-        <div className="amount">
-          <ButtonText icon={Minus} />
-          <p>{amount}</p>
-          <ButtonText icon={Plus} />
-        </div>
+      {
+        user.isAdmin
+          ?
+          null
+          :
+          <div className="bottom-card">
+            <div className="amount">
+              <ButtonText icon={Minus} />
+              <p>{amount}</p>
+              <ButtonText icon={Plus} />
+            </div>
 
-        <ButtonCard title="incluir" />
-      </div>
+            <ButtonCard title="incluir" />
+          </div>
+
+
+      }
     </Container>
   )
 }

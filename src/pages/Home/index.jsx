@@ -7,19 +7,17 @@ import { Card } from "../../components/Card";
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SaladaRavanello from "../../assets/SaladaRavanello.png";
-import SpaguettiGambe from "../../assets/SpaguettiGambe.png";
 import { api } from "../../services/api";
 
 export function Home() {
-  const [search, setSearch] = useState('')
   const [dishes, setDishes] = useState([])
+  const [search, setSearch] = useState('')
 
   const navigate = useNavigate()
 
   useEffect(() => {
     async function fetchDishes() {
-      const res = await api.get(`/dish?name=${search}`)
+      const res = await api.get(`/dishes?name=${search}`)
       console.log(res.data)
       setDishes(res.data)
     }
@@ -27,15 +25,16 @@ export function Home() {
     fetchDishes()
   }, [search])
 
-  function handleEditDish(id) {
-    navigate(`/editdish/${id}`)
-  }
+  // function handleEditDish(id) {
+  //   navigate(`/editdish/${id}`)
+  // }
 
   return (
     <Container>
       <Header />
 
       <main>
+
         <div className="head">
           <img src={CookiePng} alt="" />
 
@@ -51,25 +50,29 @@ export function Home() {
 
           <div className="cards">
 
-            {/* {
+            {
               dishes.map(dish => {
-                <Card
-                  key={String(dish.id)}
-                  data={dish}
-                  onClick={() => { handleEditDish(dish.id) }}
-                // img={SaladaRavanello}
-                // title="Salada Ravanello"
-                // description="Massa fresca com camarões e pesto."
-                // price={40}
-                // amount={20}
-                />
-              })
-            } */}
+                return (
+                  <Card
+                    key={String(dish.id)}
+                    data={dish}
+                  // onClick={() => { handleEditDish(dish.id) }}
+                  // img={SaladaRavanello}
+                  // title="Salada Ravanello"
+                  // description="Massa fresca com camarões e pesto."
+                  // price={40}
+                  // amount={20}
+                  />
+                )
+              }
+
+              )
+            }
 
           </div>
         </section>
 
-        <section>
+        {/* <section>
           <h2>Pratos Principais</h2>
           <div className="cards">
             <Card
@@ -133,7 +136,7 @@ export function Home() {
               amount={5}
             />
           </div>
-        </section>
+        </section> */}
       </main>
 
       <Footer />
