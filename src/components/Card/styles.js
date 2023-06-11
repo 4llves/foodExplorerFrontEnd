@@ -33,7 +33,10 @@ export const Container = styled.div`
     display: block;
     position: relative;
     width: 8.8rem;
+    height: 8.8rem;
     margin: 1.2rem 6.1rem 0 6.1rem;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   > h1 {    
@@ -96,6 +99,7 @@ export const Container = styled.div`
 
     img {
       width: 17.6rem;
+      height: 17.6rem;
     }
 
     > h1 {    
