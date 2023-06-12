@@ -3,10 +3,13 @@ import { Header } from "../../components/Header";
 import { Container } from "./styles";
 
 import CookiePng from '../../assets/cookie.png';
-import { Card } from "../../components/Card";
+import { Section } from "../../components/Section";
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { SwiperSlide } from "swiper/react";
+import { Card } from "../../components/Card";
+import { Slider } from "../../components/Slider";
 import { api } from "../../services/api";
 
 export function Home() {
@@ -14,6 +17,10 @@ export function Home() {
   const [search, setSearch] = useState('')
 
   const navigate = useNavigate()
+  const settings = {
+    spaceBetween: 1,
+    slidesPerView: 2,
+  }
 
   useEffect(() => {
     async function fetchDishes() {
@@ -45,11 +52,32 @@ export function Home() {
           </div>
         </div>
 
-        <section>
-          <h2>Refeições</h2>
+        <Section title="Refeições">
+          <Slider settings={settings}>
+            {
+              dishes.map(dish => {
+                return (
+                  <SwiperSlide
+                    key={String(dish.id)}
+                  >
 
-          <div className="cards">
+                    <Card
+                      data={dish}
+                    // onClick={() => { handleEditDish(dish.id) }}
+                    // img={SaladaRavanello}
+                    // title="Salada Ravanello"
+                    // description="Massa fresca com camarões e pesto."
+                    // price={40}
+                    // amount={20}
+                    />
+                  </SwiperSlide>
+                )
+              }
 
+              )
+            }
+          </Slider>
+          {/* <div className="cards">
             {
               dishes.map(dish => {
                 return (
@@ -68,75 +96,8 @@ export function Home() {
 
               )
             }
-
-          </div>
-        </section>
-
-        {/* <section>
-          <h2>Pratos Principais</h2>
-          <div className="cards">
-            <Card
-              img={SaladaRavanello}
-              title="Salada Ravanello"
-              price={40}
-              amount={20}
-            />
-
-            <Card
-              img={SpaguettiGambe}
-              title="Spaguetti Gambe"
-              price={39}
-              amount={5}
-            />
-
-            <Card
-              img={SpaguettiGambe}
-              title="Spaguetti Gambe"
-              price={39}
-              amount={5}
-            />
-
-            <Card
-              img={SpaguettiGambe}
-              title="Spaguetti Gambe"
-              price={39}
-              amount={5}
-            />
-          </div>
-        </section>
-
-        <section>
-          <h2>Pratos Principais</h2>
-          <div className="cards">
-            <Card
-              img={SaladaRavanello}
-              title="Salada Ravanello"
-              price={40}
-              amount={20}
-            />
-
-            <Card
-              img={SpaguettiGambe}
-              title="Spaguetti Gambe"
-              price={39}
-              amount={5}
-            />
-
-            <Card
-              img={SpaguettiGambe}
-              title="Spaguetti Gambe"
-              price={39}
-              amount={5}
-            />
-
-            <Card
-              img={SpaguettiGambe}
-              title="Spaguetti Gambe"
-              price={39}
-              amount={5}
-            />
-          </div>
-        </section> */}
+          </div> */}
+        </Section>
       </main>
 
       <Footer />

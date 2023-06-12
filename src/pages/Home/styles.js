@@ -64,7 +64,7 @@ export const Container = styled.div`
   }
 
   section {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
 
     margin-left: 2.4rem;
@@ -82,8 +82,8 @@ export const Container = styled.div`
 
       overflow-x: scroll;
       /* overflow: hidden; */
-      gap: 1.2rem;      
-    }
+      /* gap: 1.2rem;       */
+    /* } */
   }
 
   ${media.small`
@@ -106,9 +106,9 @@ export const Container = styled.div`
       }      
     }
 
-    section {
+    /* section {
       margin-left: 4rem;      
-    }    
+    }     */
   `};
   ${media.medium`  
     .head {      
@@ -156,7 +156,7 @@ export const Container = styled.div`
       }
     }
 
-    section {
+    /* section {
       margin-left: 8rem;
 
       h2 {
@@ -166,7 +166,7 @@ export const Container = styled.div`
       .cards {        
         gap: 2.7rem;
       }
-    }
+    } */
   `};
   ${media.exlarge`  
   .head {
@@ -193,13 +193,13 @@ export const Container = styled.div`
       }
     }
 
-    section {
+    /* section {
       margin-left: 12.1rem;
 
       h2 {
         font-size: 3.2rem;
       }
-    }
+    } */
   `};
 `
 

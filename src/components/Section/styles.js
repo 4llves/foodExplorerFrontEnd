@@ -9,7 +9,8 @@ export const Container = styled.div`
     
     font-weight: 500;
     font-size: 1.8rem;
-    line-height: 140%;    
+    line-height: 140%;
+    margin: 2.4rem 0;
   }
 
 `
