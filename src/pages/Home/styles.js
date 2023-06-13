@@ -4,7 +4,7 @@ import { ButtonText } from "../../components/ButtonText"
 import media from "../../styles/media"
 
 export const Container = styled.div`
-  height: 100%;
+  height: 100%;  
   display: flex;
   flex: 1;
   align-items: center;  

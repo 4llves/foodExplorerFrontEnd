@@ -7,7 +7,7 @@ import { api } from "../../services/api";
 
 export function Card({ data, amount, ...rest }) {
   const { user } = useAuth()
-  console.log(data)
+  // console.log(data)
 
   return (
     <Container {...rest}>

@@ -17,15 +17,11 @@ export function Home() {
   const [search, setSearch] = useState('')
 
   const navigate = useNavigate()
-  const settings = {
-    spaceBetween: 1,
-    slidesPerView: 2,
-  }
 
   useEffect(() => {
     async function fetchDishes() {
       const res = await api.get(`/dishes?name=${search}`)
-      console.log(res.data)
+      // console.log(res.data)
       setDishes(res.data)
     }
 
@@ -53,22 +49,16 @@ export function Home() {
         </div>
 
         <Section title="Refeições">
-          <Slider settings={settings}>
+
+          <Slider>
             {
               dishes.map(dish => {
                 return (
                   <SwiperSlide
                     key={String(dish.id)}
                   >
-
                     <Card
                       data={dish}
-                    // onClick={() => { handleEditDish(dish.id) }}
-                    // img={SaladaRavanello}
-                    // title="Salada Ravanello"
-                    // description="Massa fresca com camarões e pesto."
-                    // price={40}
-                    // amount={20}
                     />
                   </SwiperSlide>
                 )
