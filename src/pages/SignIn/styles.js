@@ -1,10 +1,10 @@
 import styled from "styled-components"
-import media from "../../styles/media"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
+import media from "../../styles/media"
 
 export const Container = styled.div`
-  height: 100%;
+  height: 100%;  
   display: flex;
   align-items: center;  
   flex-direction: column;
@@ -30,8 +30,7 @@ export const Form = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;  
-  
+  flex-direction: column;
 
   h3 {
     display: none;
@@ -43,6 +42,7 @@ export const Form = styled.form`
   
   .password, .email {
     margin-top: 3.2rem;
+    width: 100%;
   }
   
   .labels {
@@ -59,7 +59,7 @@ export const Form = styled.form`
     background: ${({ theme }) => theme.COLORS.DARK['700']};
     padding: 6.4rem;
     
-    width: 47.6rem;    
+    width: 47.6rem;
 
     h3 {
       display: flex;

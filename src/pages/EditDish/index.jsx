@@ -127,10 +127,10 @@ export function EditDish() {
 
           <section className="col-1">
 
-            <label htmlFor="image" className="image">
+            <label htmlFor="image">
               Imagem do prato
 
-              <div>
+              <div className="image">
                 <UploadSimple size={24} />
                 <span>Selecione a imagem</span>
                 <input
@@ -167,7 +167,6 @@ export function EditDish() {
 
           <section className="col-2">
             <div className="ingredients">
-
               {
                 ingredients.map((ingredient, index) => (
                   <Ingredient

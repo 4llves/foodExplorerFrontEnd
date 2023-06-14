@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import media from "../../styles/media"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
+import media from "../../styles/media"
 
 export const Container = styled.div`
   height: 100%;
@@ -39,10 +39,12 @@ export const Form = styled.form`
 
   .name {    
     margin-top: 7.3rem;
+    width: 100%;
   } 
   
   .password, .email {
     margin-top: 3.2rem;
+    width: 100%;
   }
   
   .labels {

@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Container = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;  
+  align-items: center;
   flex-direction: row;
   
   background-color: ${({ theme }) => theme.COLORS.DARK['900']};
@@ -11,9 +11,9 @@ export const Container = styled.div`
   
   border-radius: .8rem; 
   
-  > input {
+  > input {    
     height: 4.8rem;
-    width: 100%;
+    width: 100%;   
     
     padding: 1.2rem 1.7rem;
 

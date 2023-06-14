@@ -14,7 +14,7 @@ export const Container = styled(Link)`
   padding: 1.2rem 3.2rem;
   gap: .8rem;
   
-  width: 31.6rem;
+  width: 100%;
   height: 4.8rem;
 
   border-radius: .5rem;
@@ -31,5 +31,5 @@ export const Container = styled(Link)`
 
   > svg {
     gap: .8rem;
-  }
+  } 
 `

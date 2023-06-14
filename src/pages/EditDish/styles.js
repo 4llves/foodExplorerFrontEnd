@@ -13,8 +13,10 @@ export const Container = styled.div`
 
   main {
     display: flex;
+    width: 100%;
+    max-width: 36.4rem;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;   
   }
   
   ${media.exlarge`      
@@ -56,24 +58,38 @@ export const Form = styled.form`
   }
 
   .image {    
-    cursor: pointer;
+    display: flex;
+    cursor: pointer;    
+    border-radius: 10px;    
+    background-color: ${({ theme }) => theme.COLORS.DARK['800']};
+    color: ${({ theme }) => theme.COLORS.LIGHT['100']};
+    align-items: center;
+    gap: .8rem;
+
+    span {
+      width: 100%;
+    }
 
     input::-webkit-file-upload-button,
     input::file-selector-button {
       display: none;
     }
-
+    
     input[type='file'] {
       opacity: 0;
-      cursor: pointer;
+      cursor: pointer;      
     }
-
+    
     input {
       color: ${({ theme }) => theme.COLORS.LIGHT['100']};
+      height: 4.8rem;      
     } 
-
+    
     svg {
       color: ${({ theme }) => theme.COLORS.LIGHT['100']};
+      margin-left: 3.2rem;
+      width: 4.4rem;
+      height: 4.4rem;
     }    
   }
 

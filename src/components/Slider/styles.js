@@ -11,27 +11,23 @@ export const Container = styled.div`
   justify-content: center;
  }
 
- .swiper-pagination-bullet-active {
-   /* background-color: ${({ theme }) => theme.COLORS.LIGHT['200']}; */
+ .swiper-pagination-bullet-active {   
   display: none;
  }
 
- .swiper-pagination-bullet {
-  /* background-color: ${({ theme }) => theme.COLORS.LIGHT['100']}; */
+ .swiper-pagination-bullet {  
   display: none;
  }
 
- .swiper-button-prev {
-  /* color: ${({ theme }) => theme.COLORS.LIGHT['300']}; */
+ .swiper-button-prev {  
   display: none;
  }
 
- .swiper-button-next {
-  /* color: ${({ theme }) => theme.COLORS.LIGHT['300']}; */
+ .swiper-button-next {  
   display: none;
  }
 
- ${media.large`
+ ${media.medium`
   .swiper-pagination-bullet-active {
     background-color: ${({ theme }) => theme.COLORS.LIGHT['200']};    
     display: inline-block;
