@@ -90,7 +90,40 @@ export const Form = styled.form`
       margin-left: 3.2rem;
       width: 4.4rem;
       height: 4.4rem;
-    }    
+    }   
+    
+  }
+
+  .col-2 {
+    h2 {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 0 1.6rem 0;
+      font-weight: normal;
+
+      font-size: 1.6rem;
+      line-height: 100%;
+
+      cursor: pointer;
+
+      gap: 1.6rem;
+
+      color: ${({ theme }) => theme.COLORS.LIGHT['300']};      
+    }
+  }
+
+  .ingredients {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: .8rem;
+    
+    padding: .4rem .8rem;
+    gap: 1.6rem;
+    
+    width: 100%;
+    height: auto;
+    background-color: ${({ theme }) => theme.COLORS.DARK['900']};      
   }
 
   ${media.exlarge`

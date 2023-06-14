@@ -166,7 +166,11 @@ export function EditDish() {
 
 
           <section className="col-2">
+
+
+            <h2>Ingredients</h2>
             <div className="ingredients">
+
               {
                 ingredients.map((ingredient, index) => (
                   <Ingredient

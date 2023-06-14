@@ -2,7 +2,7 @@ import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { ButtonPageNewDish, ButtonTextViewDish, Container, Form } from "./styles";
 
-import { ArrowUUpLeft } from "@phosphor-icons/react";
+import { ArrowUUpLeft, UploadSimple } from "@phosphor-icons/react";
 import { useState } from "react";
 import { Ingredient } from "../../components/Ingredient";
 import { Input } from "../../components/Input";
@@ -97,15 +97,19 @@ export function CreateDish() {
 
           <section className="col-1">
 
-            <label htmlFor="image" className="image">
+            <label htmlFor="image">
               Imagem do prato
 
-              <input
-                id="image"
-                // icon={UploadSimple}
-                type="file"
-                onChange={(e) => setImage(e.target.files[0])}
-              />
+              <div className="image">
+                <UploadSimple size={24} />
+                <span>Selecione a imagem</span>
+                <input
+                  id="image"
+                  // icon={UploadSimple}
+                  type="file"
+                  onChange={(e) => setImage(e.target.files[0])}
+                />
+              </div>
             </label>
 
             <label htmlFor="name">
@@ -131,18 +135,18 @@ export function CreateDish() {
 
 
           <section className="col-2">
+            <h2>Ingredients</h2>
             <div className="ingredients">
 
               {
                 ingredients.map((ingredient, index) => (
                   <Ingredient
-                    key={index}
+                    key={String(index)}
                     value={ingredient}
                     onClick={() => handleRemoveIngredients(ingredient)}
                   />
                 ))
               }
-
 
               <Ingredient
                 isNew
