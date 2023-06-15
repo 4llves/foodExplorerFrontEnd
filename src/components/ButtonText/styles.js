@@ -5,7 +5,7 @@ import media from "../../styles/media";
 export const Container = styled(Link)`   
   color: ${({ theme }) => theme.COLORS.LIGHT['100']};
   font-family: ${({ theme }) => theme.FONTS.TEXT};
-  background: none;
+  background: none;  
 
   
   display: flex;

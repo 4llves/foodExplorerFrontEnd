@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import media from "../../styles/media"
-import { ButtonText } from "../../components/ButtonText"
 import { Button } from "../../components/Button"
+import { ButtonText } from "../../components/ButtonText"
+import media from "../../styles/media"
 
 export const Container = styled.div`
   height: 100%;
@@ -134,6 +134,8 @@ export const ButtonTextViewDish = styled(ButtonText)`
   margin-bottom: 1.6rem;
 
   ${media.large`
+    width: auto;    
+    justify-content: start;
     font-weight: 700;
     line-height: 140%;
     margin: 2.4rem 0 4.2rem 0;
