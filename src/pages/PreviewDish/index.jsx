@@ -3,11 +3,12 @@ import { Header } from "../../components/Header";
 import { ButtonPageViewDish, ButtonTextViewDish, Container } from "./styles";
 
 
-import { ArrowUUpLeft, Minus, Plus, Receipt } from "@phosphor-icons/react";
+import { ArrowUUpLeft, Minus, Pencil, Plus, Receipt } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ButtonText } from "../../components/ButtonText";
 import { Ingredient } from "../../components/Ingredient";
+import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 
 const value = 25
@@ -15,6 +16,8 @@ const ingredients = ["alface", "cebola", "pepino", "rabanete", "tomate", "ceboli
 
 export function PreviewDish() {
   const [data, setData] = useState(null)
+
+  const { user } = useAuth()
 
   const params = useParams()
   const navigate = useNavigate()
@@ -28,6 +31,7 @@ export function PreviewDish() {
       const res = await api.get(`/dishes/${params.id}`)
 
       setData(res.data)
+      console.log(res.data)
     }
 
     fetchDish()
@@ -48,36 +52,50 @@ export function PreviewDish() {
 
 
           <section>
-            <img src={data.image} alt="" />
+            <img src={`${api.defaults.baseURL}/files/dishImage/${data.image}`} alt="" />
 
             <div className="container">
               <h1>{data.name}</h1>
 
               <h3>{data.description}</h3>
 
+
               <div className="ingredients">
                 {
                   data.ingredients.map((ingredient, i) =>
                     <Ingredient
                       key={String(i)}
-                      value={ingredient}
+                      value={ingredient.name}
                     />
                   )
                 }
               </div>
 
-              <div className="buttons">
-                <div className="amount">
-                  <ButtonText icon={Minus} />
-                  <p>{value}</p>
-                  <ButtonText icon={Plus} />
-                </div>
+              {
+                user.isAdmin
+                  ?
+                  <div className="buttons">
+                    <ButtonPageViewDish
+                      icon={Pencil}
+                      title={`Editar Prato`}
+                      to={`/editdish/${data.id}`}
+                    />
+                  </div>
+                  :
+                  <div className="buttons">
+                    <div className="amount">
+                      <ButtonText icon={Minus} />
+                      <p>{value}</p>
+                      <ButtonText icon={Plus} />
+                    </div>
 
-                <ButtonPageViewDish
-                  icon={Receipt}
-                  title={`PEDIR • R$ ${value},00`}
-                />
-              </div>
+                    <ButtonPageViewDish
+                      icon={Receipt}
+                      title={`PEDIR • R$ ${value},00`}
+                    />
+                  </div>
+
+              }
             </div>
           </section>
         </main>

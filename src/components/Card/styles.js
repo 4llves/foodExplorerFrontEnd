@@ -37,6 +37,7 @@ export const Container = styled.div`
     margin: 1.2rem 6.1rem 0 6.1rem;
     border-radius: 50%;
     object-fit: cover;
+    cursor: pointer;
   }
 
   > h1 {    

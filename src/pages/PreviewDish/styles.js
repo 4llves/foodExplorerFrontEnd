@@ -14,24 +14,32 @@ export const Container = styled.div`
   main {
     width: 100%;    
     padding: 1.6rem 5.6rem 3.3rem;
-  }
-
-  img {
-    display: block;
-    position: relative;
-    width: 26.5rem;
-    margin-inline: auto;
-  }
+  } 
 
   section {
     margin-top: 1.6rem;    
     font-family: ${({ theme }) => theme.FONTS.TEXT};
     font-family: ${({ theme }) => theme.COLORS.LIGHT['300']};
+
+    img {
+      display: block;
+      position: relative;
+      width: 26.5rem;
+      margin-inline: auto;
+      margin-bottom: 1.6rem;
+
+      width: 26.3rem;
+      height: 26.3rem;
+
+      border-radius: 50%;
+      object-fit: cover; 
+    }
     
     h1 {
       font-weight: 500;
       font-size: 2.7rem;
       text-align: center;
+
     }
 
     h3 {
@@ -39,7 +47,7 @@ export const Container = styled.div`
       font-size: 1.6rem;
       line-height: 140%;
       font-weight: 400;
-      text-align: justify;
+      text-align: justify;      
     }
 
     .ingredients {
@@ -91,6 +99,7 @@ export const Container = styled.div`
 
       img {
         width: 39rem;
+        height: 39rem;
         margin: 0;
       }
 
@@ -104,7 +113,7 @@ export const Container = styled.div`
         display: flex;
         flex-direction: column;        
         justify-content: center;
-
+        
         h1 {
           text-align: justify;
           font-size: 40px;
@@ -132,7 +141,9 @@ export const Container = styled.div`
 export const ButtonTextViewDish = styled(ButtonText)`  
   font-size: 2.4rem;
   margin-bottom: 1.6rem;
-
+  display: flex;
+  justify-content: start;
+  
   ${media.large`
     width: auto;    
     justify-content: start;
@@ -143,15 +154,16 @@ export const ButtonTextViewDish = styled(ButtonText)`
 `
 
 export const ButtonPageViewDish = styled(Button)`
-  width: 18.8rem;
+  width: 100%;
 
   font-size: 1rem;
 
   svg {
     font-size: 1.7rem;
-  }
+  }  
 
   ${media.large`
+    width: auto; 
     font-size: 1.2rem;
     line-height: 2.4rem;
   `}

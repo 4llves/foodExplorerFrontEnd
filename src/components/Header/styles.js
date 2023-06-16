@@ -63,6 +63,7 @@ export const Container = styled.header`
       display: flex;
       flex-direction: row;
       align-items: center;
+      cursor: pointer;
       
       h1 {
         font-size: 2rem;
