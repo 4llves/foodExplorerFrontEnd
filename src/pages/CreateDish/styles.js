@@ -5,10 +5,11 @@ import media from "../../styles/media"
 
 export const Container = styled.div`
   height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;  
+  flex-direction: column;
   flex: 1;
 
   main {
@@ -19,7 +20,10 @@ export const Container = styled.div`
     align-items: center;   
   }
   
-  ${media.exlarge`      
+  ${media.large`
+    main {
+      max-width: 120rem;
+    }
   `};
 `
 
@@ -126,8 +130,8 @@ export const Form = styled.form`
     background-color: ${({ theme }) => theme.COLORS.DARK['900']};      
   }
 
-  ${media.exlarge`
-      
+  ${media.large`
+    
   `};
 `
 
@@ -135,7 +139,7 @@ export const ButtonTextViewDish = styled(ButtonText)`
   margin: 2rem 0 3.2rem 0;
   font-size: 1.6rem;
 
-  ${media.exlarge`
+  ${media.large`
   `};
 `
 
@@ -144,6 +148,6 @@ export const ButtonPageNewDish = styled(Button)`
 
   width: 100%;
 
-  ${media.exlarge`
+  ${media.large`
   `};
 `
