@@ -98,6 +98,12 @@ export const Form = styled.form`
     
   }
 
+  .col-1 {
+    select {
+      background-color: ${({ theme }) => theme.COLORS.DARK['800']};
+    }
+  }
+
   .col-2 {
     h2 {
       display: flex;

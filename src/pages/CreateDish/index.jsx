@@ -80,6 +80,12 @@ export function CreateDish() {
     // navigate(-1);
   }
 
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+  const handleSelectCategory = (e) => {
+    setSelectedCategory(e.target.value);
+  };
+
   return (
     <Container>
       <Header />
@@ -125,11 +131,18 @@ export function CreateDish() {
 
             <label htmlFor="category">
               Categoria
-              <Input
+              {/* <Input                
                 id="category"
                 placeholder="Refeição"
                 onChange={(e) => setCategory(e.target.value)}
-              />
+              /> */}
+
+              <select id="category" onChange={(e) => setCategory(e.target.value)}>
+                <option value="">Selecione uma Categoria</option>
+                <option value="melas">Refeições</option>
+                <option value="desserts">Sobremesas</option>
+                <option value="drinks">Bebidas</option>
+              </select>
             </label>
           </section>
 
