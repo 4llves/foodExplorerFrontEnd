@@ -137,12 +137,15 @@ export function CreateDish() {
                 onChange={(e) => setCategory(e.target.value)}
               /> */}
 
-              <select id="category" onChange={(e) => setCategory(e.target.value)}>
+
+              <select name="category" id="category" onChange={(e) => setCategory(e.target.value)}>
                 <option value="">Selecione uma Categoria</option>
-                <option value="melas">Refeições</option>
+                <option value="meals">Refeições</option>
                 <option value="desserts">Sobremesas</option>
                 <option value="drinks">Bebidas</option>
               </select>
+
+
             </label>
           </section>
 
