@@ -140,9 +140,9 @@ export function CreateDish() {
 
               <select name="category" id="category" onChange={(e) => setCategory(e.target.value)}>
                 <option value="">Selecione uma Categoria</option>
-                <option value="meals">Refeições</option>
-                <option value="desserts">Sobremesas</option>
-                <option value="drinks">Bebidas</option>
+                <option value="Refeições">Refeições</option>
+                <option value="Sobremesas">Sobremesas</option>
+                <option value="Bebidas">Bebidas</option>
               </select>
 
 
@@ -151,28 +151,30 @@ export function CreateDish() {
 
 
           <section className="col-2">
-            <h2>Ingredients</h2>
-            <div className="ingredients">
+            <label htmlFor="ingredients">
+              Ingredients
 
-              {
-                ingredients.map((ingredient, index) => (
-                  <Ingredient
-                    key={String(index)}
-                    value={ingredient}
-                    onClick={() => handleRemoveIngredients(ingredient)}
-                  />
-                ))
-              }
+              <div className="ingredients">
+                {
+                  ingredients.map((ingredient, index) => (
+                    <Ingredient
+                      key={String(index)}
+                      value={ingredient}
+                      onClick={() => handleRemoveIngredients(ingredient)}
+                    />
+                  ))
+                }
 
-              <Ingredient
-                isNew
-                placeholder="Adicionar"
-                onChange={e => setNewIngredient(e.target.value)}
-                value={newIngredient}
-                onClick={handleAddIngredients}
-              />
+                <Ingredient
+                  isNew
+                  placeholder="Adicionar"
+                  onChange={e => setNewIngredient(e.target.value)}
+                  value={newIngredient}
+                  onClick={handleAddIngredients}
+                />
 
-            </div>
+              </div>
+            </label>
 
             <label htmlFor="price">
               Preço

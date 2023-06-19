@@ -23,6 +23,7 @@ export const Container = styled.div`
   ${media.large`
     main {
       max-width: 120rem;
+      align-items: flex-end;
     }
   `};
 `
@@ -104,7 +105,7 @@ export const Form = styled.form`
     select {
       background-color: ${({ theme }) => theme.COLORS.DARK['800']};
       color: ${({ theme }) => theme.COLORS.LIGHT['500']};
-      padding: 16px;
+      padding: 1.6rem;
       border-radius: 5px;
       cursor: pointer;
       font-size: 1.6rem;
@@ -149,20 +150,40 @@ export const Form = styled.form`
   }
 
   ${media.large`
+    main {
+            
+    }
+
     .col-1 {      
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 3.2rem;      
+      gap: 3.2rem;
+
+      label {
+        margin-top: 3.2rem;
+      }
 
       label:nth-child(1) {
-        max-width: 230px;
+        max-width: 23rem;
       }      
 
       label:nth-child(3) {
-        max-width: 364px;
+        max-width: 36.4rem;
       }      
-    }    
+    }
+
+    .col-2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 3.2rem;
+
+      label:nth-child(2) {
+        max-width: 25.1rem;
+      }
+    }
   `};
 `
 
@@ -170,7 +191,7 @@ export const ButtonTextViewDish = styled(ButtonText)`
   margin: 2rem 0 3.2rem 0;
   font-size: 1.6rem;
 
-  ${media.large`
+  ${media.large`    
   `};
 `
 
@@ -179,6 +200,8 @@ export const ButtonPageNewDish = styled(Button)`
 
   width: 100%;
 
-  ${media.large`
+  ${media.large`    
+    max-width: 172px;
+    padding: 0;
   `};
 `

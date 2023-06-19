@@ -155,42 +155,44 @@ export function EditDish() {
 
             <label htmlFor="category">
               Categoria
-              <Input
-                id="category"
-                placeholder="Refeição"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              />
+
+              <select name="category" id="category" onChange={(e) => setCategory(e.target.value)}>
+                <option value={category}>{category}</option>
+                <option value="Refeições">Refeições</option>
+                <option value="Sobremesas">Sobremesas</option>
+                <option value="Bebidas">Bebidas</option>
+              </select>
             </label>
           </section>
 
 
           <section className="col-2">
 
+            <label htmlFor="">
+              Ingredients
 
-            <h2>Ingredients</h2>
-            <div className="ingredients">
+              <div className="ingredients">
+                {
+                  ingredients.map((ingredient, index) => (
+                    <Ingredient
+                      key={String(index)}
+                      value={ingredient}
+                      onClick={() => handleRemoveIngredients(ingredient)}
+                    />
+                  ))
+                }
 
-              {
-                ingredients.map((ingredient, index) => (
-                  <Ingredient
-                    key={String(index)}
-                    value={ingredient}
-                    onClick={() => handleRemoveIngredients(ingredient)}
-                  />
-                ))
-              }
+                <Ingredient
+                  isNew
+                  placeholder="Adicionar"
+                  onChange={e => setNewIngredient(e.target.value)}
+                  value={newIngredient}
+                  onClick={handleAddIngredients}
+                />
 
+              </div>
+            </label>
 
-              <Ingredient
-                isNew
-                placeholder="Adicionar"
-                onChange={e => setNewIngredient(e.target.value)}
-                value={newIngredient}
-                onClick={handleAddIngredients}
-              />
-
-            </div>
 
             <label htmlFor="price">
               Preço
@@ -215,10 +217,18 @@ export function EditDish() {
           </label>
         </Form>
 
-        <ButtonPageNewDish
-          title="Salvar Alterações"
-          onClick={handleUpdateDishes}
-        />
+        <div className="buttons">
+
+          <ButtonPageNewDish
+            title="Excluir"
+            onClick={() => { }}
+          />
+
+          <ButtonPageNewDish
+            title="Salvar Alterações"
+            onClick={handleUpdateDishes}
+          />
+        </div>
       </main>
 
       <Footer />
