@@ -37,7 +37,7 @@ export const Container = styled.div`
       opacity: 0.8;
 
       top: -30px;
-      left: -30px;
+      left: -30px;      
     }
 
     .text {      

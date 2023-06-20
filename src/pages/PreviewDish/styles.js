@@ -33,6 +33,12 @@ export const Container = styled.div`
 
       border-radius: 50%;
       object-fit: cover; 
+
+      transition: transform 0.3s ease-in-out;
+  
+      &:hover {
+        transform: rotate(45deg);
+      }
     }
     
     h1 {
@@ -100,7 +106,7 @@ export const Container = styled.div`
       img {
         width: 39rem;
         height: 39rem;
-        margin: 0;
+        margin: 0;        
       }
 
       .ingredients {

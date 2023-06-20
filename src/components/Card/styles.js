@@ -8,6 +8,7 @@ export const Container = styled.div`
   align-items: center;  
   gap: 1.2rem;
   isolation: isolate;
+  padding: 0 2.4rem;
 
   width: 210px;
   height: 292px;
@@ -38,6 +39,12 @@ export const Container = styled.div`
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
+
+    transition: opacity 0.3s ease-in-out;
+  
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   > h1 {    
@@ -48,7 +55,7 @@ export const Container = styled.div`
   }
 
   h3 {
-    display: none;
+    display: none;    
   }
 
   span {
@@ -116,7 +123,13 @@ export const Container = styled.div`
       align-items: center;
       justify-content: center;
       text-align: center;
-      height: 4.4rem;
+      height: 4.4rem;      
+
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     span {      

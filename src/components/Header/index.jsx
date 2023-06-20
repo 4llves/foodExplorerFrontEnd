@@ -28,6 +28,7 @@ export function Header({ ...rest }) {
           <img src={LogoExplorer} alt="" />
           <h1>food explorer</h1>
         </div>
+
         {user.isAdmin ? <span>admin</span> : null}
       </div>
 

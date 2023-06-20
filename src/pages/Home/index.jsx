@@ -1,27 +1,28 @@
+import { Card } from "../../components/Card";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
+import { Section } from "../../components/Section";
+import { Slider } from "../../components/Slider";
 import { Container } from "./styles";
 
 import CookiePng from '../../assets/cookie.png';
-import { Section } from "../../components/Section";
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SwiperSlide } from "swiper/react";
-import { Card } from "../../components/Card";
-import { Slider } from "../../components/Slider";
 import { api } from "../../services/api";
 
 export function Home() {
   const [dishes, setDishes] = useState([])
   const [search, setSearch] = useState('')
+  const [categories, setCategories] = useState([])
 
   const navigate = useNavigate()
 
   useEffect(() => {
     async function fetchDishes() {
       const res = await api.get(`/dishes?name=${search}`)
-      // console.log(res.data)
+      console.log(res.data)
       setDishes(res.data)
     }
 
@@ -48,8 +49,8 @@ export function Home() {
           </div>
         </div>
 
-        <Section title="Refeições">
 
+        {/* <Section title="Refeicoes">
           <Slider>
             {
               dishes.map(dish => {
@@ -67,27 +68,64 @@ export function Home() {
               )
             }
           </Slider>
-          {/* <div className="cards">
-            {
-              dishes.map(dish => {
-                return (
-                  <Card
-                    key={String(dish.id)}
-                    data={dish}
-                  // onClick={() => { handleEditDish(dish.id) }}
-                  // img={SaladaRavanello}
-                  // title="Salada Ravanello"
-                  // description="Massa fresca com camarões e pesto."
-                  // price={40}
-                  // amount={20}
-                  />
-                )
-              }
+        </Section> */}
 
-              )
-            }
-          </div> */}
-        </Section>
+        {
+          dishes.filter((dish) => dish.category == "Refeições").length > 0 && (
+            <Section title="Refeições">
+              <Slider>
+                {
+                  dishes.filter((dish) => dish.category == "Refeições").map((dish) => (
+                    <SwiperSlide>
+                      <Card
+                        data={dish}
+                      />
+                    </SwiperSlide>
+                  ))
+                }
+              </Slider>
+            </Section>
+          )
+        }
+
+        {
+          dishes.filter((dish) => dish.category == "Sobremesas").length > 0 && (
+            <Section title="Sobremesas">
+              <Slider>
+                {
+                  dishes.filter((dish) => dish.category == "Sobremesas").map((dish) => (
+                    <SwiperSlide>
+                      <Card
+                        data={dish}
+                      />
+                    </SwiperSlide>
+                  ))
+                }
+              </Slider>
+            </Section>
+          )
+        }
+
+        {
+          dishes.filter((dish) => dish.category == "Bebidas").length > 0 && (
+            <Section title="Bebidas">
+              <Slider>
+                {
+                  dishes.filter((dish) => dish.category == "Bebidas").map((dish) => (
+                    <SwiperSlide>
+                      <Card
+                        data={dish}
+                      />
+                    </SwiperSlide>
+                  ))
+                }
+              </Slider>
+            </Section>
+          )
+        }
+
+
+
       </main>
 
       <Footer />
