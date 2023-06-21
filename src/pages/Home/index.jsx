@@ -19,6 +19,12 @@ export function Home() {
 
   const navigate = useNavigate()
 
+  function handleOnChange(e) {
+    if (window.location.pathname === "/") {
+      setSearch(e.target.value)
+    }
+  }
+
   useEffect(() => {
     async function fetchDishes() {
       const res = await api.get(`/dishes?name=${search}`)
@@ -29,13 +35,16 @@ export function Home() {
     fetchDishes()
   }, [search])
 
+
   // function handleEditDish(id) {
   //   navigate(`/editdish/${id}`)
   // }
 
   return (
     <Container>
-      <Header />
+      <Header
+        onChange={handleOnChange}
+      />
 
       <main>
 
