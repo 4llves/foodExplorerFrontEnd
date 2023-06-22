@@ -15,7 +15,6 @@ import { api } from "../../services/api";
 export function Home() {
   const [dishes, setDishes] = useState([])
   const [search, setSearch] = useState('')
-  const [categories, setCategories] = useState([])
 
   const navigate = useNavigate()
 
@@ -87,6 +86,7 @@ export function Home() {
                   dishes.filter((dish) => dish.category == "Refeições").map((dish) => (
                     <SwiperSlide>
                       <Card
+                        key={dish.id}
                         data={dish}
                       />
                     </SwiperSlide>
@@ -138,6 +138,6 @@ export function Home() {
       </main>
 
       <Footer />
-    </Container>
+    </Container >
   )
 }

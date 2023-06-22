@@ -61,7 +61,17 @@ export const Container = styled.div`
       display: flex;
       gap: 2.4rem;
       justify-content: space-around;
-      flex-wrap: wrap;
+      flex-wrap: wrap;      
+      
+      .tags-ingredients {
+        display: flex;
+        background-color: ${({ theme }) => theme.COLORS.LIGHT['600']};
+        border-radius: .5rem;        
+        padding: 0.25rem 0.5rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+      }
     }
 
     .buttons {
@@ -113,6 +123,11 @@ export const Container = styled.div`
         margin: 0;
         gap: 1.2rem;
         justify-content: left;
+
+        .tags-ingredients {          
+          height: 3rem;
+          font-size: 1.2rem;
+        }
       }
 
       .container {

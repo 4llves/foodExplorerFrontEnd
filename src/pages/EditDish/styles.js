@@ -10,22 +10,28 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  flex: 1;
+  flex: 1;  
 
   main {
     display: flex;
     width: 100%;
     max-width: 36.4rem;
     flex-direction: column;
-    align-items: center;   
+    align-items: center;
+
+    .buttons {
+        display: flex;
+
+        width: 100%;
+        gap: 2rem;
+      }
   }
   
   ${media.large`
     main {
       max-width: 120rem;     
 
-      .buttons {
-        display: flex;        
+      .buttons {        
         justify-content: flex-end;
 
         width: 100%;

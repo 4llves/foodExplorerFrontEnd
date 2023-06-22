@@ -4,7 +4,7 @@ import { ButtonPageNewDish, ButtonTextViewDish, Container, Form } from "./styles
 
 import { ArrowUUpLeft, UploadSimple } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Ingredient } from "../../components/Ingredient";
 import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
@@ -23,6 +23,12 @@ export function EditDish() {
   const [newIngredient, setNewIngredient] = useState("")
 
   const params = useParams();
+
+  const navigate = useNavigate()
+
+  function handleBack() {
+    navigate(-1)
+  }
 
   function handleAddIngredients() {
     //Impedir ingredients duplicados
@@ -47,7 +53,7 @@ export function EditDish() {
       return alert("Mano, assim... Preciso classifcar ela em alguma categoria, inventa uma ai que da bom.")
     }
 
-    if (!ingredients) {
+    if (!newIngredient) {
       return alert("Olha... Assim... Sabe... Preciso de ingredientes pra criar a receita né... preenche ai se não num vou deixar você concluir.")
     }
 
@@ -87,7 +93,18 @@ export function EditDish() {
     await api.put(`/dishes/${params.id}`, formData);
 
     alert("Nota criada com sucesso! 👌")
-    // navigate(-1);
+
+    handleBack()
+  }
+
+  async function handleDelete() {
+    try {
+      alert("Desejas mesmo excluir este prato?")
+      await api.delete(`/dishes/${params.id}`)
+      navigate('/')
+    } catch (error) {
+      alert.error("Fala ao remover o prato, contate o desenvolvedor...")
+    }
   }
 
 
@@ -120,6 +137,7 @@ export function EditDish() {
             <ButtonTextViewDish
               icon={ArrowUUpLeft}
               title="Voltar"
+              onClick={handleBack}
             />
 
             <h1>Novo Prato</h1>
@@ -221,7 +239,7 @@ export function EditDish() {
 
           <ButtonPageNewDish
             title="Excluir"
-            onClick={() => { }}
+            onClick={handleDelete}
           />
 
           <ButtonPageNewDish

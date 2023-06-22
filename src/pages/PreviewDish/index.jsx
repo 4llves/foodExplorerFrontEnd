@@ -7,12 +7,10 @@ import { ArrowUUpLeft, Minus, Pencil, Plus, Receipt } from "@phosphor-icons/reac
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ButtonText } from "../../components/ButtonText";
-import { Ingredient } from "../../components/Ingredient";
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 
 const value = 25
-const ingredients = ["alface", "cebola", "pepino", "rabanete", "tomate", "cebolinha"]
 
 export function PreviewDish() {
   const [data, setData] = useState(null)
@@ -20,6 +18,7 @@ export function PreviewDish() {
   const { user } = useAuth()
 
   const params = useParams()
+
   const navigate = useNavigate()
 
   function handleBack() {
@@ -63,10 +62,9 @@ export function PreviewDish() {
               <div className="ingredients">
                 {
                   data.ingredients.map((ingredient, i) =>
-                    <Ingredient
-                      key={String(i)}
-                      value={ingredient.name}
-                    />
+                    <div className="tags-ingredients" key={i}>
+                      {ingredient.name}
+                    </div>
                   )
                 }
               </div>

@@ -47,7 +47,9 @@ export const Container = styled.div`
   } 
   
 
-  ${media.large`   
-  
+  ${media.large`
+    > input {      
+      font-size: 1.2rem;
+    }
   `};
 `;

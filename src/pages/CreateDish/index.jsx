@@ -4,6 +4,7 @@ import { ButtonPageNewDish, ButtonTextViewDish, Container, Form } from "./styles
 
 import { ArrowUUpLeft, UploadSimple } from "@phosphor-icons/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Ingredient } from "../../components/Ingredient";
 import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
@@ -18,6 +19,12 @@ export function CreateDish() {
 
   const [ingredients, setIngredients] = useState([])
   const [newIngredient, setNewIngredient] = useState("")
+
+  const navigate = useNavigate()
+
+  function handleBack() {
+    navigate(-1)
+  }
 
   function handleAddIngredients() {
     //Impedir ingredients duplicados
@@ -42,7 +49,7 @@ export function CreateDish() {
       return alert("Mano, assim... Preciso classifcar ela em alguma categoria, inventa uma ai que da bom.")
     }
 
-    if (!ingredients) {
+    if (!newIngredient) {
       return alert("Olha... Assim... Sabe... Preciso de ingredientes pra criar a receita né... preenche ai se não num vou deixar você concluir.")
     }
 
@@ -77,14 +84,9 @@ export function CreateDish() {
     api.post("/dishes", formData)
 
     alert("Nota criada com sucesso! 👌")
-    // navigate(-1);
+
+    handleBack()
   }
-
-  const [selectedCategory, setSelectedCategory] = useState('');
-
-  const handleSelectCategory = (e) => {
-    setSelectedCategory(e.target.value);
-  };
 
   return (
     <Container>
@@ -96,6 +98,7 @@ export function CreateDish() {
             <ButtonTextViewDish
               icon={ArrowUUpLeft}
               title="Voltar"
+              onClick={handleBack}
             />
 
             <h1>Novo Prato</h1>
