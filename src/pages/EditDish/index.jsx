@@ -53,7 +53,7 @@ export function EditDish() {
       return alert("Mano, assim... Preciso classifcar ela em alguma categoria, inventa uma ai que da bom.")
     }
 
-    if (!newIngredient) {
+    if (!ingredients) {
       return alert("Olha... Assim... Sabe... Preciso de ingredientes pra criar a receita né... preenche ai se não num vou deixar você concluir.")
     }
 

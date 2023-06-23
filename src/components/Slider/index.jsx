@@ -6,9 +6,9 @@ import { Swiper } from 'swiper/react';
 import { Container } from './styles';
 
 
-export function Slider({ children }) {
+export function Slider({ children, ...rest }) {
   return (
-    <Container>
+    <Container {...rest}>
       <Swiper
         modules={[Navigation, Pagination, A11y]}
         // spaceBetween={10}
