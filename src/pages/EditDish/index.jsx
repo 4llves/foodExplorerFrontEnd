@@ -45,6 +45,10 @@ export function EditDish() {
   }
 
   async function handleUpdateDishes() {
+    if (!image) {
+      return alert("Coloca ai uma imagem pra nós, pra saber se eu comeria ou não esse prato.")
+    }
+
     if (!name) {
       return alert("Mermão, não tem como cadastrar a receita sem um nome. Digita um ai pra nós.")
     }
@@ -65,14 +69,14 @@ export function EditDish() {
       return alert("Essa descrição é obrigatória. Afinal de contas... como vou saber algo sobre a receita sem uma observação ou descrição?!")
     }
 
-    // console.log({
-    //   name,
-    //   image,
-    //   category,
-    //   description,
-    //   price,
-    //   ingredients
-    // })
+    console.log({
+      name,
+      image,
+      category,
+      description,
+      price,
+      ingredients
+    })
 
     if (newIngredient) {
       return alert(
@@ -92,7 +96,7 @@ export function EditDish() {
 
     await api.put(`/dishes/${params.id}`, formData);
 
-    alert("Nota criada com sucesso! 👌")
+    alert("Prato atualizado com sucesso! 👌")
 
     handleBack()
   }
@@ -112,12 +116,14 @@ export function EditDish() {
     async function fetchDish() {
       const res = await api.get(`/dishes/${params.id}`);
 
-      const { name, description, category, price, ingredients } =
+      const { name, image, description, category, price, ingredients } =
         res.data;
+      console.log(image)
 
       const ingredientList = ingredients.map((ingredient) => ingredient.name)
 
       setName(name);
+      setImage(image);
       setDescription(description);
       setCategory(category);
       setPrice(price);
@@ -150,10 +156,9 @@ export function EditDish() {
 
               <div className="image">
                 <UploadSimple size={24} />
-                <span>Selecione a imagem</span>
+                <span>{image ? "Alterar a Imagem" : "Selecione a imagem"}</span>
                 <input
                   id="image"
-                  // icon={UploadSimple}
                   type="file"
                   onChange={(e) => setImage(e.target.files[0])}
                 />

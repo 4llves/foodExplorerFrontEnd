@@ -1,6 +1,6 @@
 import { ButtonHeader, Container, Search } from "./styles";
 
-import { MagnifyingGlass, Receipt, SignOut } from '@phosphor-icons/react';
+import { List, MagnifyingGlass, Receipt, SignOut } from '@phosphor-icons/react';
 
 import { useNavigate } from "react-router-dom";
 import LogoExplorer from '../../assets/logoExplorer.svg';
@@ -20,6 +20,10 @@ export function Header({ ...rest }) {
 
   return (
     <Container {...rest}>
+      <div className="menu-amburguer">
+        <List />
+      </div>
+
       <div className="wrapper-logo">
         <div
           className="logo"

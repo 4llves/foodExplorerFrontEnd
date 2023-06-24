@@ -8,7 +8,6 @@ import { Container } from "./styles";
 import CookiePng from '../../assets/cookie.png';
 
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { SwiperSlide } from "swiper/react";
 import { api } from "../../services/api";
 
@@ -16,7 +15,6 @@ export function Home() {
   const [dishes, setDishes] = useState([])
   const [search, setSearch] = useState('')
 
-  const navigate = useNavigate()
 
   function handleOnChange(e) {
     if (window.location.pathname === "/") {

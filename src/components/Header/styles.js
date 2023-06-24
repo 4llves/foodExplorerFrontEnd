@@ -8,12 +8,13 @@ export const Container = styled.header`
   height: 10.4rem; 
 
   display: flex;    
-  align-items: center;
-  justify-content: space-around;
+  align-items: center;  
+  
 
   background: ${({ theme }) => theme.COLORS.DARK['700']};
 
   .menu-amburguer {
+    margin: 10rem;
     svg {
       font-size: 2.4rem;
     }
@@ -50,7 +51,7 @@ export const Container = styled.header`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.8rem;    
 
     span {
       margin-top: 0.2rem; // tava dando agonia em ver ele um pouco pra cima mesmo centralizado
