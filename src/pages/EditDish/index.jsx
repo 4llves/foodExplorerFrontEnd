@@ -133,6 +133,11 @@ export function EditDish() {
     fetchDish();
   }, []);
 
+  function handleChangeImageDish(e) {
+    const file = e.target.files[0];
+    setImage(file);
+  }
+
   return (
     <Container>
       <Header />
@@ -155,12 +160,14 @@ export function EditDish() {
               Imagem do prato
 
               <div className="image">
+                <img src={image} alt="Imagem do prato" />
+
                 <UploadSimple size={24} />
                 <span>{image ? "Alterar a Imagem" : "Selecione a imagem"}</span>
                 <input
                   id="image"
                   type="file"
-                  onChange={(e) => setImage(e.target.files[0])}
+                  onChange={handleChangeImageDish}
                 />
               </div>
             </label>

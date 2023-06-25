@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import media from "../../styles/media";
 
-export const Container = styled.div`
-  
+export const Container = styled.div`  
   padding: 0.5rem;  
   border-radius: 0.5rem;
 
@@ -15,13 +14,13 @@ export const Container = styled.div`
 
   border: ${({ theme, isNew }) => isNew ? `1px dashed ${theme.COLORS.LIGHT['500']}` : "none"};
   
-  > input {   
-    max-width: 70px;    
+  > input {    
+    max-width: 70px;
     /* max-width: 110px; */
     height: 2.8rem;
     
     color: ${({ theme }) => theme.COLORS.LIGHT['100']};
-    font-size: 0.9rem;
+    font-size: .9rem;
     background: transparent;
     border: none;
     

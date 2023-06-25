@@ -86,6 +86,10 @@ export const Form = styled.form`
       align-items: center;
       gap: .8rem;
 
+      img {
+        display: none;
+      }
+
       span {
         width: 100%;
       }
