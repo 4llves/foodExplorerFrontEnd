@@ -32,11 +32,6 @@ export function Home() {
     fetchDishes()
   }, [search])
 
-
-  // function handleEditDish(id) {
-  //   navigate(`/editdish/${id}`)
-  // }
-
   return (
     <Container>
       <Header
@@ -54,27 +49,6 @@ export function Home() {
             <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
           </div>
         </div>
-
-
-        {/* <Section title="Refeicoes">
-          <Slider>
-            {
-              dishes.map(dish => {
-                return (
-                  <SwiperSlide
-                    key={String(dish.id)}
-                  >
-                    <Card
-                      data={dish}
-                    />
-                  </SwiperSlide>
-                )
-              }
-
-              )
-            }
-          </Slider>
-        </Section> */}
 
         {
           dishes.filter((dish) => dish.category === "Refeições").length > 0 && (
@@ -129,8 +103,6 @@ export function Home() {
             </Section>
           )
         }
-
-
 
       </main>
 

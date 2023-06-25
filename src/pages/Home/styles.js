@@ -24,7 +24,7 @@ export const Container = styled.div`
     width: 80vw;
     height: 12rem;
     
-    /* margin: 4.4rem 1.6rem 6.2rem 3.6rem;     */
+    
     margin: 4.4rem auto 4.2rem;
 
     img {
@@ -61,30 +61,7 @@ export const Container = styled.div`
         line-height: 140%;        
       }
     }    
-  }
-
-  section {
-    /* display: flex;
-    flex-direction: column;
-
-    margin-left: 2.4rem;
-
-    h2 {
-      font-family: ${({ theme }) => theme.FONTS.TEXT};      
-      font-size: 1.8rem;
-      line-height: 140%;
-      margin: 2.4rem 0;
-    }
-
-    .cards {
-      width: 90vw;
-      display: flex;
-
-      overflow-x: scroll;
-      /* overflow: hidden; */
-      /* gap: 1.2rem;       */
-    /* } */
-  }
+  }  
 
   ${media.small`
     .head {
@@ -105,10 +82,7 @@ export const Container = styled.div`
         }
       }      
     }
-
-    /* section {
-      margin-left: 4rem;      
-    }     */
+    
   `};
   ${media.medium`  
     .head {      
@@ -155,18 +129,7 @@ export const Container = styled.div`
         }
       }
     }
-
-    /* section {
-      margin-left: 8rem;
-
-      h2 {
-        font-size: 3.2rem;
-      }
-
-      .cards {        
-        gap: 2.7rem;
-      }
-    } */
+    
   `};
   ${media.exlarge`  
   .head {
@@ -192,14 +155,7 @@ export const Container = styled.div`
         }
       }
     }
-
-    /* section {
-      margin-left: 12.1rem;
-
-      h2 {
-        font-size: 3.2rem;
-      }
-    } */
+    
   `};
 `
 
