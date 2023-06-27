@@ -69,14 +69,14 @@ export function EditDish() {
       return alert("Essa descrição é obrigatória. Afinal de contas... como vou saber algo sobre a receita sem uma observação ou descrição?!")
     }
 
-    console.log({
-      name,
-      image,
-      category,
-      description,
-      price,
-      ingredients
-    })
+    // console.log({
+    //   name,
+    //   image,
+    //   category,
+    //   description,
+    //   price,
+    //   ingredients
+    // })
 
     if (newIngredient) {
       return alert(
@@ -118,7 +118,8 @@ export function EditDish() {
 
       const { name, image, description, category, price, ingredients } =
         res.data;
-      console.log(image)
+      console.log(res.data)
+
 
       const ingredientList = ingredients.map((ingredient) => ingredient.name)
 
@@ -132,6 +133,7 @@ export function EditDish() {
 
     fetchDish();
   }, []);
+
 
   function handleChangeImageDish(e) {
     const file = e.target.files[0];
@@ -160,15 +162,18 @@ export function EditDish() {
               Imagem do prato
 
               <div className="image">
-                <img src={image} alt="Imagem do prato" />
+                <img src={`http://localhost:3333/files/dishImage/${image}`} alt="Imagem do prato" />
 
                 <UploadSimple size={24} />
                 <span>{image ? "Alterar a Imagem" : "Selecione a imagem"}</span>
-                <input
-                  id="image"
-                  type="file"
-                  onChange={handleChangeImageDish}
-                />
+                {
+                  image &&
+                  <input
+                    id="image"
+                    type="file"
+                    onChange={handleChangeImageDish}
+                  />
+                }
               </div>
             </label>
 
