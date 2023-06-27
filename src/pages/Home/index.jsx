@@ -69,11 +69,11 @@ export function Home() {
         }
 
         {
-          dishes.filter((dish) => dish.category === "Sobremesa").length > 0 && (
-            <Section title="Sobremesa">
+          dishes.filter((dish) => dish.category === "Sobremesas").length > 0 && (
+            <Section title="Sobremesas">
               <Slider>
                 {
-                  dishes.filter((dish) => dish.category === "Sobremesa").map((meal, index) => (
+                  dishes.filter((dish) => dish.category === "Sobremesas").map((meal, index) => (
                     <SwiperSlide key={index}>
                       <Card
                         data={meal}
