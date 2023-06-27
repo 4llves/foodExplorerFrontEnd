@@ -1,7 +1,8 @@
-import { ButtonHeader, Container, Search } from "./styles";
+import { ButtonHeader, Container, MenuItem, MenuOptions, Search } from "./styles";
 
 import { List, MagnifyingGlass, Receipt, SignOut } from '@phosphor-icons/react';
 
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LogoExplorer from '../../assets/logoExplorer.svg';
 import { useAuth } from "../../hooks/auth";
@@ -11,6 +12,7 @@ const quantityDishes = 10
 
 export function Header({ ...rest }) {
   const { signOut, user } = useAuth()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigate = useNavigate()
 
@@ -18,11 +20,28 @@ export function Header({ ...rest }) {
     navigate(`/`);
   }
 
+  function handleMenuToggle() {
+    setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
+  }
+
   return (
     <Container {...rest}>
-      <div className="menu-amburguer">
+      <div className="menu-hamburguer" onClick={handleMenuToggle}>
         <List />
       </div>
+
+      {
+        isMenuOpen && (
+          <MenuOptions>
+            <MenuItem onClick={handleMenuToggle}>
+              Search
+            </MenuItem>
+            <MenuItem onClick={handleMenuToggle}>
+              Output
+            </MenuItem>
+          </MenuOptions>
+        )
+      }
 
       <div className="wrapper-logo">
         <div

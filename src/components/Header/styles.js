@@ -7,13 +7,16 @@ export const Container = styled.header`
   width: 100%;
   height: 10.4rem; 
 
-  display: flex;    
-  align-items: center;  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  align-content: space-evenly;
   
 
   background: ${({ theme }) => theme.COLORS.DARK['700']};
 
-  .menu-amburguer {
+  .menu-hamburguer {
     margin: 10rem;
     svg {
       font-size: 2.4rem;
@@ -91,6 +94,7 @@ export const Container = styled.header`
   ${media.medium`    
   `};
   ${media.large`
+    display: flex;
     justify-content: center;
     align-items: center;    
     gap: 3.2rem;
@@ -99,7 +103,7 @@ export const Container = styled.header`
       flex-direction: column;      
       align-items: end;
       gap: 0;
-                 
+                       
       .logo {
         h1 {
           font-size: 2.4rem;
@@ -121,7 +125,7 @@ export const Container = styled.header`
       }
     }
 
-    .menu-amburguer,
+    .menu-hamburguer,
     .receipt-mobile {
       display: none;
     }
@@ -151,3 +155,29 @@ export const Search = styled.div`
     width: 58.1rem;    
   `};
 `
+
+
+export const MenuOptions = styled.ul`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: ${({ theme }) => theme.COLORS.DARK["700"]};
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+`;
+
+export const MenuItem = styled.li`
+  display: flex;
+  align-items: center;
+  color: ${({ theme }) => theme.COLORS.CAKE["200"]};
+  cursor: pointer;
+
+  svg {
+    font-size: 1.6rem;
+    margin-right: 5px;
+  }
+`;
