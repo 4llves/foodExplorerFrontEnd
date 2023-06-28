@@ -5,21 +5,16 @@ import { Button } from "../Button"
 export const Container = styled.header`
   /* grid-area: header; */
   width: 100%;
-  height: 10.4rem; 
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  justify-content: center;
-  align-content: space-evenly;
+  height: 10.4rem;
+  display: flex;  
+  align-items: center;  
+  justify-content: space-around;
   
-
   background: ${({ theme }) => theme.COLORS.DARK['700']};
 
-  .menu-hamburguer {
-    margin: 10rem;
+  .menu-hamburguer {        
     svg {
-      font-size: 2.4rem;
+      font-size: 2.4rem;      
     }
   }
 
@@ -160,14 +155,22 @@ export const Search = styled.div`
 export const MenuOptions = styled.ul`
   position: absolute;
   top: 100%;
-  right: 0;
+  left: 0;
+  height: 100vh;
   background-color: ${({ theme }) => theme.COLORS.DARK["700"]};
-  padding: 10px;
+  padding: 1rem;
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
   z-index: 999;
+
+  ${media.large`
+    display: none;        
+  `};
+  ${media.exlarge`
+    display: none;       
+  `};  
 `;
 
 export const MenuItem = styled.li`
@@ -180,4 +183,77 @@ export const MenuItem = styled.li`
     font-size: 1.6rem;
     margin-right: 5px;
   }
+  
+  ${media.large`
+    display: none;        
+  `};
+  ${media.exlarge`
+    display: none;       
+  `};  
 `;
+
+export const SectionHeader = styled.section`
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    align-items: start;
+    justify-content: start;    
+    padding: 3.6rem 2.8rem;
+
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 1rem;
+      
+
+      a {
+        &:nth-child(2) {
+          margin: 4.6rem 0 2rem;
+        }
+      
+        border-bottom: solid 1px ${({ theme }) => theme.COLORS.DARK["1000"]};
+        color: ${({ theme }) => theme.COLORS.LIGHT["100"]};
+        text-decoration: none;
+        font-size: 2.4rem;
+        font-weight: 300;
+        line-height: 3.3rem;
+        word-wrap: break-word;        
+      }
+
+      
+    }
+  
+
+   background: linear-gradient(
+    to bottom,
+    ${({ theme }) => theme.COLORS.DARK['700']} 20%,
+    ${({ theme }) => theme.COLORS.DARK['400']} 20%
+  );
+  
+  .menu-name {
+    display: flex;    
+    align-items: center;
+    gap: 1rem;
+    font-size: 2.1rem;
+    margin: 1rem 0 6.5rem;
+    /* position: absolute;
+    top: 4rem;
+    left: 2rem; */
+
+    > svg {
+      font-size: 1.8rem;
+    }    
+  }
+
+  ${media.large`
+    display: none;        
+  `};
+  ${media.exlarge`
+    display: none;       
+  `};  
+`

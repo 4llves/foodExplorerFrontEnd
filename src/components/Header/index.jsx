@@ -1,9 +1,9 @@
-import { ButtonHeader, Container, MenuItem, MenuOptions, Search } from "./styles";
+import { ButtonHeader, Container, Search, SectionHeader } from "./styles";
 
-import { List, MagnifyingGlass, Receipt, SignOut } from '@phosphor-icons/react';
+import { List, MagnifyingGlass, Receipt, SignOut, X } from '@phosphor-icons/react';
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LogoExplorer from '../../assets/logoExplorer.svg';
 import { useAuth } from "../../hooks/auth";
 import { Input } from "../Input";
@@ -30,18 +30,30 @@ export function Header({ ...rest }) {
         <List />
       </div>
 
-      {
-        isMenuOpen && (
-          <MenuOptions>
-            <MenuItem onClick={handleMenuToggle}>
-              Search
-            </MenuItem>
-            <MenuItem onClick={handleMenuToggle}>
-              Output
-            </MenuItem>
-          </MenuOptions>
-        )
-      }
+      {isMenuOpen && (
+        <SectionHeader>
+          <div className="menu-name" onClick={handleMenuToggle}>
+            <X />
+            Menu
+          </div>
+
+          <div className="links">
+            <Input
+              placeholder="Pesquiar"
+              type="text"
+              icon={MagnifyingGlass}
+            />
+            {
+              user.isAdmin
+                ?
+                <Link to="/createdish">Novo Prato</Link>
+                :
+                null
+            }
+            <Link onClick={signOut}>Sair</Link>
+          </div>
+        </SectionHeader>
+      )}
 
       <div className="wrapper-logo">
         <div
@@ -76,7 +88,7 @@ export function Header({ ...rest }) {
       {
         user.isAdmin
           ?
-          null
+          <div></div>
           :
           <div className="receipt-mobile">
             <Receipt />
