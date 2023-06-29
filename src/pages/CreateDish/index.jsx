@@ -62,6 +62,12 @@ export function CreateDish() {
       return alert("Olha... Preciso de ingredientes pra criar a receita... preenche ai se não num vou deixar você concluir. 🙂")
     }
 
+    if (newIngredient) {
+      return alert(
+        "Ei, psiu!! Você preencheu o campo de ingrediente mas faltou clicar no botãozinho de mais do lado pra adicionar. 🙂"
+      );
+    }
+
     if (!price) {
       return alert("Vai ficar de grátis? se não, coloca um preço ai pra nós! 🙂")
     }
