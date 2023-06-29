@@ -36,7 +36,7 @@ A aplicação conta com as seguintes páginas:
 - Novo prato
 - Editar prato
 
-!["Página home"](../src/assets/homeFoodFy.gif")
+!["Página home"](./src/assets/homeFoodFy.gif")
 
 <h2 id="features">🛠️ Funcionalidades</h2>
 
