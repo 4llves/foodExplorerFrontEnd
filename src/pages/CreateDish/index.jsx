@@ -3,11 +3,12 @@ import { Header } from "../../components/Header";
 import { ButtonPageNewDish, ButtonTextViewDish, Container, Form } from "./styles";
 
 import { ArrowUUpLeft, UploadSimple } from "@phosphor-icons/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Ingredient } from "../../components/Ingredient";
 import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
+import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 
 export function CreateDish() {
@@ -20,7 +21,15 @@ export function CreateDish() {
   const [ingredients, setIngredients] = useState([])
   const [newIngredient, setNewIngredient] = useState("")
 
+  const { user } = useAuth()
+
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!user.isAdmin) {
+      navigate('/')
+    }
+  }, [])
 
   function handleBack() {
     navigate(-1)

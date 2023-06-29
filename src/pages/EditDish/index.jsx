@@ -8,6 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Ingredient } from "../../components/Ingredient";
 import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
+import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 
 
@@ -22,9 +23,12 @@ export function EditDish() {
   const [ingredients, setIngredients] = useState([])
   const [newIngredient, setNewIngredient] = useState("")
 
-  const params = useParams();
+  const { user } = useAuth()
 
   const navigate = useNavigate()
+
+  const params = useParams();
+
 
   function handleBack() {
     navigate(-1)
@@ -113,6 +117,10 @@ export function EditDish() {
 
 
   useEffect(() => {
+    if (!user.isAdmin) {
+      navigate('/')
+    }
+
     async function fetchDish() {
       const res = await api.get(`/dishes/${params.id}`);
 
