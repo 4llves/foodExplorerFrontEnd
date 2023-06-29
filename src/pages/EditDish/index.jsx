@@ -241,7 +241,7 @@ export function EditDish() {
               Preço
               <Input
                 id="price"
-                value={price}
+                value={price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
                 placeholder="R$ 00,00"
                 onChange={(e) => setPrice(e.target.value)}
               />

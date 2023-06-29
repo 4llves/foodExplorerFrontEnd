@@ -58,14 +58,14 @@ export function CreateDish() {
       return alert("Mano, assim... Preciso classifcar ela em alguma categoria, inventa uma ai que da bom. 🙂")
     }
 
-    if (ingredients.length === 0) {
-      return alert("Olha... Preciso de ingredientes pra criar a receita... preenche ai se não num vou deixar você concluir. 🙂")
-    }
-
     if (newIngredient) {
       return alert(
         "Ei, psiu!! Você preencheu o campo de ingrediente mas faltou clicar no botãozinho de mais do lado pra adicionar. 🙂"
       );
+    }
+
+    if (ingredients.length === 0) {
+      return alert("Olha... Preciso de ingredientes pra criar a receita... preenche ai se não num vou deixar você concluir. 🙂")
     }
 
     if (!price) {

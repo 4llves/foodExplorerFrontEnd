@@ -10,16 +10,32 @@ import { ButtonText } from "../../components/ButtonText";
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 
-const value = 25
-
 export function PreviewDish() {
   const [data, setData] = useState(null)
+  const [quantity, setQuantity] = useState(0)
 
   const { user } = useAuth()
 
   const params = useParams()
 
   const navigate = useNavigate()
+
+
+  function handleAddQuantityDish() {
+    if (quantity >= 99) {
+      return
+    }
+
+    setQuantity(quantity + 1)
+  }
+
+  function handleRemoveQuantityDish() {
+    if (quantity === 0) {
+      return
+    }
+
+    setQuantity(quantity - 1)
+  }
 
   function handleBack() {
     navigate(-1)
@@ -82,14 +98,14 @@ export function PreviewDish() {
                   :
                   <div className="buttons">
                     <div className="amount">
-                      <ButtonText icon={Minus} />
-                      <p>{value}</p>
-                      <ButtonText icon={Plus} />
+                      <ButtonText icon={Minus} onClick={handleRemoveQuantityDish} />
+                      <p>{quantity}</p>
+                      <ButtonText icon={Plus} onClick={handleAddQuantityDish} />
                     </div>
 
                     <ButtonPageViewDish
                       icon={Receipt}
-                      title={`PEDIR • R$ ${value},00`}
+                      title={`PEDIR • R$ ${data.price},00`}
                     />
                   </div>
 

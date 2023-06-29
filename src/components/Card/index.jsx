@@ -1,6 +1,7 @@
 import { HeartStraight, Minus, Pencil, Plus } from "@phosphor-icons/react";
 import { ButtonCard, Container } from "./styles";
 
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ButtonText } from '../../components/ButtonText';
 import { useAuth } from "../../hooks/auth";
@@ -9,8 +10,25 @@ import { api } from "../../services/api";
 export function Card({ data, amount, ...rest }) {
   const { user } = useAuth()
   // console.log(data)
+  const [quantity, setQuantity] = useState(0)
 
   const navigate = useNavigate()
+
+  function handleAddQuantityDish() {
+    if (quantity >= 99) {
+      return
+    }
+
+    setQuantity(quantity + 1)
+  }
+
+  function handleRemoveQuantityDish() {
+    if (quantity === 0) {
+      return
+    }
+
+    setQuantity(quantity - 1)
+  }
 
   function handleDetails(id) {
     navigate(`/previewdish/${id}`);
@@ -36,7 +54,7 @@ export function Card({ data, amount, ...rest }) {
 
       <h3>{data.description}</h3>
 
-      <span>R$ {data.price},00</span>
+      <span>{data.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
 
       {
         user.isAdmin
@@ -45,9 +63,9 @@ export function Card({ data, amount, ...rest }) {
           :
           <div className="bottom-card">
             <div className="amount">
-              <ButtonText icon={Minus} />
-              <p>{amount}</p>
-              <ButtonText icon={Plus} />
+              <ButtonText icon={Minus} onClick={handleRemoveQuantityDish} />
+              <p>{quantity}</p>
+              <ButtonText icon={Plus} onClick={handleAddQuantityDish} />
             </div>
 
             <ButtonCard title="incluir" />

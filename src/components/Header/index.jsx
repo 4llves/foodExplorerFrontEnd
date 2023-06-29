@@ -8,7 +8,7 @@ import LogoExplorer from '../../assets/logoExplorer.svg';
 import { useAuth } from "../../hooks/auth";
 import { Input } from "../Input";
 
-const quantityDishes = 10
+const quantityDishes = 0
 
 export function Header({ ...rest }) {
   const { signOut, user } = useAuth()
@@ -17,6 +17,12 @@ export function Header({ ...rest }) {
   const navigate = useNavigate()
 
   function handleHome() {
+    navigate(`/`);
+  }
+
+  function handleSignOut() {
+    signOut()
+
     navigate(`/`);
   }
 
@@ -81,7 +87,7 @@ export function Header({ ...rest }) {
           : <ButtonHeader icon={Receipt} title={`Pedidos (${quantityDishes})`} />
       }
 
-      <div className="logout" onClick={signOut}>
+      <div className="logout" onClick={handleSignOut}>
         <SignOut />
       </div>
 
