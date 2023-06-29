@@ -126,7 +126,7 @@ export function EditDish() {
 
       const { name, image, description, category, price, ingredients } =
         res.data;
-      console.log(res.data)
+      // console.log(res.data)
 
 
       const ingredientList = ingredients.map((ingredient) => ingredient.name)

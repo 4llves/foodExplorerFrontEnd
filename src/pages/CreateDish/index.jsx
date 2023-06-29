@@ -51,23 +51,23 @@ export function CreateDish() {
 
   async function handleNewDishes() {
     if (!name) {
-      return alert("Mermão, não tem como cadastrar a receita sem um nome. Digita um ai pra nós.")
+      return alert("Mermão, não tem como cadastrar a receita sem um nome. Digita um ai pra nós. 🙂")
     }
 
     if (!category) {
-      return alert("Mano, assim... Preciso classifcar ela em alguma categoria, inventa uma ai que da bom.")
+      return alert("Mano, assim... Preciso classifcar ela em alguma categoria, inventa uma ai que da bom. 🙂")
     }
 
-    if (!ingredients) {
-      return alert("Olha... Assim... Sabe... Preciso de ingredientes pra criar a receita né... preenche ai se não num vou deixar você concluir.")
+    if (ingredients.length === 0) {
+      return alert("Olha... Preciso de ingredientes pra criar a receita... preenche ai se não num vou deixar você concluir. 🙂")
     }
 
     if (!price) {
-      return alert("Vai ficar de grátis? se não, coloca um preço ai pra nós!")
+      return alert("Vai ficar de grátis? se não, coloca um preço ai pra nós! 🙂")
     }
 
     if (!description) {
-      return alert("Essa descrição é obrigatória. Afinal de contas... como vou saber algo sobre a receita sem uma observação ou descrição?!")
+      return alert("Essa descrição é obrigatória. Afinal de contas... como vou saber algo sobre a receita sem uma observação ou descrição?! 🙂")
     }
 
     // console.log({
@@ -90,7 +90,7 @@ export function CreateDish() {
     ingredients.map((ingredient) => formData.append("ingredients", ingredient));
 
 
-    api.post("/dishes", formData)
+    await api.post("/dishes", formData)
 
     alert("Nota criada com sucesso! 👌")
 
@@ -170,7 +170,7 @@ export function CreateDish() {
                 {
                   ingredients.map((ingredient, index) => (
                     <Ingredient
-                      key={String(index)}
+                      key={index}
                       value={ingredient}
                       onClick={() => handleRemoveIngredients(ingredient)}
                     />

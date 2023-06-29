@@ -30,7 +30,7 @@ export function PreviewDish() {
       const res = await api.get(`/dishes/${params.id}`)
 
       setData(res.data)
-      console.log(res.data)
+      // console.log(res.data)
     }
 
     fetchDish()
