@@ -23,7 +23,7 @@
 
 O projeto Food Explorer consiste no desafio final do programa Explorer da Rocketseat. Trata-se de uma aplicação de cardápio digital para um restaurante fictício.
 
-O front-end do projeto, responsável pela interface do usuário, está disponível neste repositório. Já o back-end, que lida com a lógica e o armazenamento dos dados, está disponível [aqui](https://github.com/madalena-rocha/food-explorer-backend).
+O front-end do projeto, responsável pela interface do usuário, está disponível neste repositório. Já o back-end, que lida com a lógica e o armazenamento dos dados, está disponível [aqui](https://github.com/4llves/foodExplorerBackEnd).
 
 <h2 id="pages">📃 Páginas</h2>
 
